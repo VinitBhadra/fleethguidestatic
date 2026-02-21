@@ -4,19 +4,25 @@ function calcFuel() {
   const price = parseFloat(document.getElementById('fc-price').value);
   const mileage = parseFloat(document.getElementById('fc-mileage').value);
   
-  if (!distance || !price || !mileage) {
-    alert('Please fill all fields');
+  if (!distance || !price || !mileage || distance <= 0 || price <= 0 || mileage <= 0) {
+    alert('Please fill all fields with valid positive numbers');
     return;
   }
   
   const fuelRequired = (distance / mileage).toFixed(2);
   const fuelCost = (fuelRequired * price).toFixed(2);
+  const costPerKm = (fuelCost / distance).toFixed(2);
   
   const result = document.getElementById('fc-result');
   result.innerHTML = `
-    <h4>Result:</h4>
+    <h4>💡 Fuel Cost Calculation:</h4>
+    <p>Distance: <strong>${distance} km</strong></p>
     <p>Fuel Required: <span class="result-value">${fuelRequired} L</span></p>
-    <p>Total Cost: <span class="result-value">₹${fuelCost}</span></p>
+    <p>Fuel Price: <strong>₹${price}/L</strong></p>
+    <p>Vehicle Mileage: <strong>${mileage} km/L</strong></p>
+    <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
+    <p style="font-size: 1.1rem;"><strong>Total Fuel Cost: <span class="result-value">₹${fuelCost}</span></strong></p>
+    <p>Cost per km: ₹${costPerKm}/km</p>
   `;
   result.classList.add('show');
 }
@@ -28,21 +34,26 @@ function calcTrip() {
   const driver = parseFloat(document.getElementById('tc-driver').value) || 0;
   const toll = parseFloat(document.getElementById('tc-toll').value) || 0;
   
-  if (!distance || !price || !mileage) {
-    alert('Please fill distance, fuel price, and mileage');
+  if (!distance || !price || !mileage || distance <= 0 || price <= 0 || mileage <= 0) {
+    alert('Please fill distance, fuel price, and mileage with valid positive numbers');
     return;
   }
   
   const fuelCost = (distance / mileage) * price;
   const total = fuelCost + driver + toll;
+  const costPerKm = (total / distance).toFixed(2);
   
   const result = document.getElementById('tc-result');
   result.innerHTML = `
-    <h4>Trip Cost Breakdown:</h4>
-    <p>Fuel: <span class="result-value">₹${fuelCost.toFixed(2)}</span></p>
-    <p>Driver: <span class="result-value">₹${driver.toFixed(2)}</span></p>
-    <p>Toll: <span class="result-value">₹${toll.toFixed(2)}</span></p>
-    <p><strong>Total: <span class="result-value">₹${total.toFixed(2)}</span></strong></p>
+    <h4>💡 Trip Cost Breakdown:</h4>
+    <p>Distance: <strong>${distance} km</strong></p>
+    <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
+    <p>Fuel Cost: <span class="result-value">₹${fuelCost.toFixed(2)}</span></p>
+    <p>Driver Cost: <span class="result-value">₹${driver.toFixed(2)}</span></p>
+    <p>Toll Charges: <span class="result-value">₹${toll.toFixed(2)}</span></p>
+    <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
+    <p style="font-size: 1.1rem;"><strong>Total Trip Cost: <span class="result-value">₹${total.toFixed(2)}</span></strong></p>
+    <p>Cost per km: ₹${costPerKm}/km</p>
   `;
   result.classList.add('show');
 }
@@ -51,18 +62,24 @@ function calcCostPerKM() {
   const total = parseFloat(document.getElementById('cpk-total').value);
   const distance = parseFloat(document.getElementById('cpk-distance').value);
   
-  if (!total || !distance) {
-    alert('Please fill both fields');
+  if (!total || !distance || total <= 0 || distance <= 0) {
+    alert('Please fill both fields with valid positive numbers');
     return;
   }
   
   const costPerKM = (total / distance).toFixed(2);
+  const cost100km = (costPerKM * 100).toFixed(2);
+  const cost1000km = (costPerKM * 1000).toFixed(2);
   
   const result = document.getElementById('cpk-result');
   result.innerHTML = `
-    <h4>Result:</h4>
-    <p>Cost per KM: <span class="result-value">₹${costPerKM}/km</span></p>
-    <p style="font-size:0.85rem;opacity:0.8;">Based on ₹${total} over ${distance} km</p>
+    <h4>💡 Cost Per KM Analysis:</h4>
+    <p>Total Cost: <strong>₹${total}</strong></p>
+    <p>Distance: <strong>${distance} km</strong></p>
+    <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
+    <p style="font-size: 1.2rem;"><strong>Cost per KM: <span class="result-value">₹${costPerKM}/km</span></strong></p>
+    <p>Cost for 100 km: ₹${cost100km}</p>
+    <p>Cost for 1,000 km: ₹${cost1000km}</p>
   `;
   result.classList.add('show');
 }
