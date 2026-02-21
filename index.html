@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FleetGuide.in - Vehicle GPS, Transport Rules & Fleet Cost Calculators</title>
+  <meta name="description" content="Free fleet management tools for India. Calculate fuel costs, trip expenses, and optimize your fleet operations with our GPS guides and transport rules.">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">FleetGuide.in</a>
+      <ul class="nav-links">
+        <li><a href="#calculators">Calculators</a></li>
+        <li><a href="guides.html">GPS Guides</a></li>
+        <li><a href="rules.html">Transport Rules</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section - Compact -->
+  <section class="hero">
+    <div class="container">
+      <h1>Fleet Management Made Simple</h1>
+      <p>Free calculators, GPS guides & transport rules for Indian fleet owners</p>
+      <a href="#calculators" class="cta-btn">Use Free Calculators</a>
+    </div>
+  </section>
+
+  <!-- Calculators Section - Compact Grid -->
+  <section id="calculators" class="section">
+    <div class="container">
+      <h2 class="section-title">Fleet Calculators</h2>
+      
+      <div class="calc-grid">
+        <!-- Fuel Cost Calculator -->
+        <div class="calc-card">
+          <h3>⛽ Fuel Cost</h3>
+          <input type="number" id="fc-distance" placeholder="Distance (km)" min="0">
+          <input type="number" id="fc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
+          <input type="number" id="fc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+          <button onclick="calcFuel()" class="calc-btn">Calculate</button>
+          <div id="fc-result" class="result"></div>
+        </div>
+
+        <!-- Trip Cost Calculator -->
+        <div class="calc-card">
+          <h3>🚛 Trip Cost</h3>
+          <input type="number" id="tc-distance" placeholder="Distance (km)" min="0">
+          <input type="number" id="tc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
+          <input type="number" id="tc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+          <input type="number" id="tc-driver" placeholder="Driver Cost (₹)" min="0">
+          <input type="number" id="tc-toll" placeholder="Toll (₹)" min="0">
+          <button onclick="calcTrip()" class="calc-btn">Calculate</button>
+          <div id="tc-result" class="result"></div>
+        </div>
+
+        <!-- Cost Per KM -->
+        <div class="calc-card">
+          <h3>📊 Cost/KM</h3>
+          <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0">
+          <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0">
+          <button onclick="calcCostPerKM()" class="calc-btn">Calculate</button>
+          <div id="cpk-result" class="result"></div>
+        </div>
+      </div>
+
+      <!-- Ad Banner -->
+      <div class="ad-banner">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX" data-ad-slot="YYYYYYYYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features - Compact -->
+  <section class="section features-section">
+    <div class="container">
+      <h2 class="section-title">Why FleetGuide?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="icon">🆓</div>
+          <h3>100% Free</h3>
+          <p>All tools free forever</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📱</div>
+          <h3>Mobile Ready</h3>
+          <p>Works on all devices</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🇮🇳</div>
+          <h3>India Focused</h3>
+          <p>Built for Indian fleets</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h3>Accurate</h3>
+          <p>Reliable calculations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section - Compact -->
+  <section class="section products-section">
+    <div class="container">
+      <h2 class="section-title">Recommended Products</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="images/car-visor-organizer.jpg" alt="Car Visor Organizer" loading="lazy">
+          <h3>Car Visor Organizer</h3>
+          <p class="price">₹249</p>
+          <a href="https://amzn.to/4aefd9T" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/car-charger-120w.jpg" alt="120W Car Charger" loading="lazy">
+          <h3>120W Fast Charger</h3>
+          <p class="price">₹749</p>
+          <a href="https://amzn.to/3ZUM1jg" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/magnetic-phone-holder.jpg" alt="Phone Holder" loading="lazy">
+          <h3>Magnetic Holder</h3>
+          <p class="price">₹299</p>
+          <a href="https://amzn.to/3O5Je4g" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/car-seat-organizer.jpg" alt="Seat Organizer" loading="lazy">
+          <h3>Seat Organizer</h3>
+          <p class="price">₹499</p>
+          <a href="https://amzn.to/4aCg9pP" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+      </div>
+      <p class="disclaimer">As an Amazon Associate, we earn from qualifying purchases.</p>
+    </div>
+  </section>
+
+  <!-- Quick Links - Compact -->
+  <section class="section links-section">
+    <div class="container">
+      <div class="links-grid">
+        <div class="link-card">
+          <h3>📚 Resources</h3>
+          <ul>
+            <li><a href="guides.html">GPS Tracking Guide</a></li>
+            <li><a href="rules.html">Transport Rules</a></li>
+            <li><a href="reviews.html">Vehicle Reviews</a></li>
+            <li><a href="blog.html">Fleet Tips</a></li>
+          </ul>
+        </div>
+        <div class="link-card">
+          <h3>🔧 Tools</h3>
+          <ul>
+            <li><a href="#calculators">Fuel Calculator</a></li>
+            <li><a href="#calculators">Trip Calculator</a></li>
+            <li><a href="#calculators">Cost/KM Tool</a></li>
+            <li><a href="products.html">Shop Products</a></li>
+          </ul>
+        </div>
+        <div class="link-card" id="contact">
+          <h3>📞 Contact</h3>
+          <ul>
+            <li>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="73101c1d0712100733151f16160714061a17165d1a1d">fleetguideprivacy@gmail.com</a></li>
+            <li>Business: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb998e8892959e8888bb9d979e9e8f9c8e929f9ed59295">fleetguideprivacy@gmail.com</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer - Compact -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 FleetGuide.in | 
+        <a href="about.html">About</a> | 
+        <a href="privacy.html">Privacy</a> | 
+        <a href="terms.html">Terms</a> | 
+        <a href="contact.html">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent -
