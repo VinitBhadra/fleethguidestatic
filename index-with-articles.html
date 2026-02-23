@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FleetGuide.in - Free Fleet Management Calculators, GPS Tracking & Transport Rules India</title>
+  <meta name="description" content="Free fleet management tools for India - Calculate fuel costs, trip expenses, cost per km. GPS tracking guides, AIS-140 compliance, transport rules, vehicle reviews. Latest telematics and connected vehicle news.">
+  <meta name="keywords" content="fleet management calculator, fuel cost calculator India, trip cost calculator, GPS tracking India, AIS-140, transport rules India, commercial vehicle, fleet optimization, telematics, connected vehicles">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1613694918143455" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">FleetGuide.in</a>
+      <ul class="nav-links">
+        <li><a href="#calculators">Calculators</a></li>
+        <li><a href="guides.html">GPS Guides</a></li>
+        <li><a href="rules.html">Transport Rules</a></li>
+        <li><a href="#articles">Industry News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Fleet Management Made Simple</h1>
+      <p>Free calculators, GPS guides, transport rules & latest telematics news for Indian fleet owners</p>
+      <a href="#calculators" class="cta-btn">Use Free Calculators</a>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="section">
+    <div class="container">
+      <div class="content-box">
+        <h2>Welcome to FleetGuide.in - India's Complete Fleet Management Platform</h2>
+        <p>
+          FleetGuide.in is India's most comprehensive online platform for fleet owners, transport managers, and commercial vehicle drivers. Whether you operate a single truck or manage a large logistics company, our free tools and expert guides help you optimize operations, reduce costs, and stay compliant with Indian transport regulations.
+        </p>
+        <p>
+          Since 2026, we've helped thousands of fleet operators across India make better decisions through accurate cost calculations, comprehensive GPS tracking guides, up-to-date transport rule information, and the latest news on connected vehicles, autonomous vehicles, and telematics technology.
+        </p>
+        
+        <h3>What Makes FleetGuide.in Different?</h3>
+        <ul>
+          <li><strong>100% Free Forever:</strong> No hidden fees, no registration required, no credit card needed</li>
+          <li><strong>India-Specific:</strong> Tools and information tailored for Indian fleet operations and regulations</li>
+          <li><strong>Latest Industry News:</strong> Stay updated with connected vehicle technology and telematics innovations</li>
+          <li><strong>Comprehensive Coverage:</strong> From simple cost calculators to detailed GPS guides and compliance information</li>
+          <li><strong>Expert Knowledge:</strong> Created by transport industry professionals who understand your challenges</li>
+          <li><strong>Always Updated:</strong> Regular updates to reflect latest regulations, technologies, and best practices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculators Section -->
+  <section id="calculators" class="section">
+    <div class="container">
+      <h2 class="section-title">Fleet Cost Calculators</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #666; font-size: 1.05rem;">
+        Make data-driven decisions with our professional fleet calculators. Get instant, accurate estimates for fuel costs, trip expenses, and operational efficiency. Used by thousands of fleet owners across India.
+      </p>
+      
+      <div class="calc-grid">
+        <!-- Fuel Cost Calculator -->
+        <div class="calc-card">
+          <h3>⛽ Fuel Cost Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate fuel expenses for any distance based on current fuel prices and vehicle mileage.</p>
+          <input type="number" id="fc-distance" placeholder="Distance (km)" min="0" step="0.1">
+          <input type="number" id="fc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
+          <input type="number" id="fc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+          <button onclick="calcFuel()" class="calc-btn">Calculate Fuel Cost</button>
+          <div id="fc-result" class="result"></div>
+        </div>
+
+        <!-- Trip Cost Calculator -->
+        <div class="calc-card">
+          <h3>🚛 Trip Cost Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate complete trip costs including fuel, driver charges, tolls, and other expenses.</p>
+          <input type="number" id="tc-distance" placeholder="Distance (km)" min="0" step="0.1">
+          <input type="number" id="tc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
+          <input type="number" id="tc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+          <input type="number" id="tc-driver" placeholder="Driver Cost (₹)" min="0">
+          <input type="number" id="tc-toll" placeholder="Toll (₹)" min="0">
+          <button onclick="calcTrip()" class="calc-btn">Calculate Trip Cost</button>
+          <div id="tc-result" class="result"></div>
+        </div>
+
+        <!-- Cost Per KM -->
+        <div class="calc-card">
+          <h3>📊 Cost per KM Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Analyze operational efficiency by calculating your average cost per kilometer traveled.</p>
+          <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0">
+          <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0" step="0.1">
+          <button onclick="calcCostPerKM()" class="calc-btn">Calculate Cost/KM</button>
+          <div id="cpk-result" class="result"></div>
+        </div>
+      </div>
+
+      <!-- Ad Banner -->
+      <div class="ad-banner">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1613694918143455" data-ad-slot="YYYYYYYYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Telematics & Industry News -->
+  <section id="articles" class="section" style="background: #F8F9FA;">
+    <div class="container">
+      <h2 class="section-title">Latest Telematics & Connected Vehicle News</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #666; font-size: 1.05rem;">
+        Stay updated with the latest developments in vehicle telematics, connected vehicles, autonomous driving, and fleet technology. Expert articles from industry leaders.
+      </p>
+
+      <div class="articles-grid">
+        <!-- Article 1 -->
+        <div class="article-card">
+          <div class="article-tag">Telematics</div>
+          <h3>Understanding Vehicle Telematics: A Complete Guide for Indian Fleet Owners</h3>
+          <p>Vehicle telematics combines telecommunications and informatics to provide real-time data about your fleet. Learn how GPS tracking, vehicle diagnostics, and driver behavior monitoring can reduce costs by 15-25% and improve safety across your entire fleet operation.</p>
+          <p class="article-meta">📅 Updated February 2026 • 8 min read</p>
+          <a href="#telematics-guide" class="read-more">Read Full Article →</a>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-card">
+          <div class="article-tag">Connected Vehicles</div>
+          <h3>IoT Sensors in Commercial Vehicles: The Future of Fleet Management</h3>
+          <p>IoT sensors are revolutionizing fleet management in India. From fuel monitoring and tire pressure sensors to temperature control in refrigerated trucks, connected vehicle technology provides real-time insights that help fleet owners optimize routes, reduce maintenance costs, and ensure cargo safety.</p>
+          <p class="article-meta">📅 February 2026 • 6 min read</p>
+          <a href="#iot-sensors" class="read-more">Read Full Article →</a>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-card">
+          <div class="article-tag">GPS Tracking</div>
+          <h3>AIS-140 GPS Tracking: Compliance Requirements for Indian Commercial Vehicles</h3>
+          <p>The Ministry of Road Transport and Highways mandates AIS-140 compliant GPS devices for public and commercial vehicles in India. Understand the technical requirements, installation guidelines, emergency features, and how to choose the right AIS-140 certified device for your fleet.</p>
+          <p class="article-meta">📅 January 2026 • 10 min read</p>
+          <a href="guides.html" class="read-more">Read Full Article →</a>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="article-card">
+          <div class="article-tag">Autonomous Vehicles</div>
+          <h3>Autonomous Trucks in India: Current Status and Future Outlook</h3>
+          <p>While fully autonomous commercial vehicles are still years away from Indian roads, several companies are testing Level 2 and Level 3 automation features. Explore the current state of autonomous driving technology, regulatory challenges in India, and how fleet owners can prepare for this transformation.</p>
+          <p class="article-meta">📅 February 2026 • 7 min read</p>
+          <a href="#autonomous-vehicles" class="read-more">Read Full Article →</a>
+        </div>
+
+        <!-- Article 5 -->
+        <div class="article-card">
+          <div class="article-tag">Fuel Efficiency</div>
+          <h3>Advanced Telematics for Fuel Monitoring: Reduce Fleet Fuel Costs by 20%</h3>
+          <p>Fuel represents 30-40% of total fleet operating costs. Advanced telematics systems with fuel sensors can detect theft, monitor consumption patterns, identify inefficient driving behaviors, and provide actionable insights. Real case studies from Indian logistics companies achieving significant savings.</p>
+          <p class="article-meta">📅 January 2026 • 9 min read</p>
+          <a href="#fuel-monitoring" class="read-more">Read Full Article →</a>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="article-card">
+          <div class="article-tag">Safety Technology</div>
+          <h3>ADAS in Commercial Vehicles: Advanced Driver Assistance Systems Explained</h3>
+          <p>Advanced Driver Assistance Systems (ADAS) like collision warning, lane departure alerts, and automatic emergency braking are becoming more common in commercial vehicles. Learn about different ADAS features, their benefits for fleet safety, costs, and which Indian truck manufacturers offer these technologies.</p>
+          <p class="article-meta">📅 February 2026 • 8 min read</p>
+          <a href="#adas-systems" class="read-more">Read Full Article →</a>
+        </div>
+
+        <!-- Article 7 -->
+        <div class="article-card">
+          <div class="article-tag">Fleet Management</div>
+          <h3>Cloud-Based Fleet Management Software: Complete Buyer's Guide 2026</h3>
+          <p>Modern fleet management has moved to the cloud. Compare leading fleet management platforms available in India, understand pricing models (per vehicle/month), essential features like real-time tracking, route optimization, driver management, and maintenance scheduling. Includes reviews of popular Indian and international solutions.</p>
+          <p class="article-meta">📅 January 2026 • 11 min read</p>
+          <a href="#fleet-software" class="read-more">Read Full Article →</a>
+        </div>
+
+        <!-- Article 8 -->
+        <div class="article-card">
+          <div class="article-tag">Electric Vehicles</div>
+          <h3>Electric Commercial Vehicles: Telematics for EV Fleet Management in India</h3>
+          <p>Electric trucks and delivery vans are entering the Indian market. EV telematics differs from traditional vehicles - battery health monitoring, charging station location, range prediction, and regenerative braking optimization. Learn how to manage electric vehicle fleets effectively with specialized telematics solutions.</p>
+          <p class="article-meta">📅 February 2026 • 7 min read</p>
+          <a href="#ev-telematics" class="read-more">Read Full Article →</a>
+        </div>
+
+        <!-- Article 9 -->
+        <div class="article-card">
+          <div class="article-tag">Driver Behavior</div>
+          <h3>Driver Behavior Monitoring: Improve Fleet Safety with Telematics Data</h3>
+          <p>Driver behavior is the biggest factor affecting fleet safety and costs. Telematics systems monitor harsh braking, rapid acceleration, overspeeding, and idle time. Discover how to implement driver scoring systems, provide targeted training, and reduce accidents by 30-40% through data-driven driver management programs.</p>
+          <p class="article-meta">📅 January 2026 • 8 min read</p>
+          <a href="#driver-monitoring" class="read-more">Read Full Article →</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">
+          Want expert GPS tracking guidance for your fleet?
+        </p>
+        <a href="guides.html" class="cta-btn">Read Complete GPS Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose FleetGuide -->
+  <section class="section features-section">
+    <div class="container">
+      <h2 class="section-title">Why 10,000+ Fleet Owners Trust FleetGuide.in</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="icon">🆓</div>
+          <h3>100% Free</h3>
+          <p>All tools free forever. No registration, no hidden costs, no credit card needed.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h3>Accurate Results</h3>
+          <p>Reliable calculations tested by thousands of fleet operators across India.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🇮🇳</div>
+          <h3>India Focused</h3>
+          <p>Built specifically for Indian transport industry, regulations, and requirements.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📱</div>
+          <h3>Mobile Ready</h3>
+          <p>Works perfectly on smartphones, tablets, and desktops. Calculate on the go.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Get calculations immediately. No waiting, no processing delays.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔒</div>
+          <h3>Privacy Protected</h3>
+          <p>We don't store your data. All calculations happen in your browser.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📰</div>
+          <h3>Industry News</h3>
+          <p>Latest updates on telematics, connected vehicles, and fleet technology.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔄</div>
+          <h3>Always Updated</h3>
+          <p>Regular updates for latest regulations, fuel prices, and industry standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="section products-section">
+    <div class="container">
+      <h2 class="section-title">Recommended Fleet Products</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #666;">
+        Quality accessories to improve driver comfort, vehicle organization, and operational efficiency.
+      </p>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="images/car-visor-organizer.jpg" alt="Car Visor Organizer" loading="lazy">
+          <h3>Car Visor Organizer</h3>
+          <p style="padding: 0 15px; font-size: 0.9rem;">Keep documents organized</p>
+          <p class="price">₹249</p>
+          <a href="https://amzn.to/4aefd9T" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/car-charger-120w.jpg" alt="120W Car Charger" loading="lazy">
+          <h3>120W Fast Charger</h3>
+          <p style="padding: 0 15px; font-size: 0.9rem;">Charge 4 devices simultaneously</p>
+          <p class="price">₹749</p>
+          <a href="https://amzn.to/3ZUM1jg" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/magnetic-phone-holder.jpg" alt="Phone Holder" loading="lazy">
+          <h3>Magnetic Holder</h3>
+          <p style="padding: 0 15px; font-size: 0.9rem;">360° rotation phone mount</p>
+          <p class="price">₹299</p>
+          <a href="https://amzn.to/3O5Je4g" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/car-seat-organizer.jpg" alt="Seat Organizer" loading="lazy">
+          <h3>Seat Organizer</h3>
+          <p style="padding: 0 15px; font-size: 0.9rem;">Multi-compartment storage</p>
+          <p class="price">₹499</p>
+          <a href="https://amzn.to/4aCg9pP" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+      </div>
+      <p class="disclaimer">As an Amazon Associate, we earn from qualifying purchases.</p>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="section links-section" id="contact">
+    <div class="container">
+      <div class="links-grid">
+        <div class="link-card">
+          <h3>📚 Resources</h3>
+          <ul>
+            <li><a href="guides.html">GPS Tracking Guide</a></li>
+            <li><a href="rules.html">Transport Rules India</a></li>
+            <li><a href="reviews.html">Vehicle Reviews</a></li>
+            <li><a href="about.html">About FleetGuide</a></li>
+          </ul>
+        </div>
+        <div class="link-card">
+          <h3>🔧 Calculators</h3>
+          <ul>
+            <li><a href="#calculators">Fuel Cost Calculator</a></li>
+            <li><a href="#calculators">Trip Cost Calculator</a></li>
+            <li><a href="#calculators">Cost per KM Tool</a></li>
+            <li><a href="products.html">Fleet Products</a></li>
+          </ul>
+        </div>
+        <div class="link-card">
+          <h3>📞 Contact Us</h3>
+          <ul>
+            <li>Email: <a href="/cdn-cgi/l/email-protection#80e6ece5e5f4e7f5e9e4e5f0f2e9f6e1e3f9c0e7ede1e9ecaee3efed"><span class="__cf_email__" data-cfemail="32545e57574655475b565742405b4453514b72555f535b5e1c515d5f">[email&#160;protected]</span></a></li>
+            <li><a href="contact.html">Contact Page</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 FleetGuide.in - India's Premier Fleet Management Platform | 
+        <a href="about.html">About</a> | 
+        <a href="privacy.html">Privacy</a> | 
+        <a href="terms.html">Terms</a> | 
+        <a href="contact.html">Contact</a>
+      </p>
+      <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+        Fleet Calculators | GPS Tracking | Telematics News | Connected Vehicles | Transport Rules India
+      </p>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 We use cookies to improve your experience. <a href=

@@ -1,11 +1,13 @@
-// Calculator Functions
-function calcFuel() {
+// Live Calculator Functions (calculate as you type)
+function calcFuelLive() {
   const distance = parseFloat(document.getElementById('fc-distance').value);
   const price = parseFloat(document.getElementById('fc-price').value);
   const mileage = parseFloat(document.getElementById('fc-mileage').value);
   
+  const result = document.getElementById('fc-result');
+  
   if (!distance || !price || !mileage || distance <= 0 || price <= 0 || mileage <= 0) {
-    alert('Please fill all fields with valid positive numbers');
+    result.classList.remove('show');
     return;
   }
   
@@ -13,7 +15,6 @@ function calcFuel() {
   const fuelCost = (fuelRequired * price).toFixed(2);
   const costPerKm = (fuelCost / distance).toFixed(2);
   
-  const result = document.getElementById('fc-result');
   result.innerHTML = `
     <h4>💡 Fuel Cost Calculation:</h4>
     <p>Distance: <strong>${distance} km</strong></p>
@@ -27,15 +28,17 @@ function calcFuel() {
   result.classList.add('show');
 }
 
-function calcTrip() {
+function calcTripLive() {
   const distance = parseFloat(document.getElementById('tc-distance').value);
   const price = parseFloat(document.getElementById('tc-price').value);
   const mileage = parseFloat(document.getElementById('tc-mileage').value);
   const driver = parseFloat(document.getElementById('tc-driver').value) || 0;
   const toll = parseFloat(document.getElementById('tc-toll').value) || 0;
   
+  const result = document.getElementById('tc-result');
+  
   if (!distance || !price || !mileage || distance <= 0 || price <= 0 || mileage <= 0) {
-    alert('Please fill distance, fuel price, and mileage with valid positive numbers');
+    result.classList.remove('show');
     return;
   }
   
@@ -43,7 +46,6 @@ function calcTrip() {
   const total = fuelCost + driver + toll;
   const costPerKm = (total / distance).toFixed(2);
   
-  const result = document.getElementById('tc-result');
   result.innerHTML = `
     <h4>💡 Trip Cost Breakdown:</h4>
     <p>Distance: <strong>${distance} km</strong></p>
@@ -58,12 +60,14 @@ function calcTrip() {
   result.classList.add('show');
 }
 
-function calcCostPerKM() {
+function calcCostPerKMLive() {
   const total = parseFloat(document.getElementById('cpk-total').value);
   const distance = parseFloat(document.getElementById('cpk-distance').value);
   
+  const result = document.getElementById('cpk-result');
+  
   if (!total || !distance || total <= 0 || distance <= 0) {
-    alert('Please fill both fields with valid positive numbers');
+    result.classList.remove('show');
     return;
   }
   
@@ -71,7 +75,6 @@ function calcCostPerKM() {
   const cost100km = (costPerKM * 100).toFixed(2);
   const cost1000km = (costPerKM * 1000).toFixed(2);
   
-  const result = document.getElementById('cpk-result');
   result.innerHTML = `
     <h4>💡 Cost Per KM Analysis:</h4>
     <p>Total Cost: <strong>₹${total}</strong></p>
@@ -82,6 +85,19 @@ function calcCostPerKM() {
     <p>Cost for 1,000 km: ₹${cost1000km}</p>
   `;
   result.classList.add('show');
+}
+
+// Original Calculator Functions (with button click)
+function calcFuel() {
+  calcFuelLive();
+}
+
+function calcTrip() {
+  calcTripLive();
+}
+
+function calcCostPerKM() {
+  calcCostPerKMLive();
 }
 
 // Mobile Menu Toggle

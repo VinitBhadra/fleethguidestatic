@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FleetGuide.in - Free Fleet Management Calculators, GPS Tracking & Transport Rules India</title>
+  <meta name="description" content="Free fleet management tools for India - Calculate fuel costs, trip expenses, cost per km. GPS tracking guides, AIS-140 compliance, transport rules, vehicle reviews. Professional tools for fleet owners.">
+  <meta name="keywords" content="fleet management calculator, fuel cost calculator India, trip cost calculator, GPS tracking India, AIS-140, transport rules India, commercial vehicle, fleet optimization">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1613694918143455" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">FleetGuide.in</a>
+      <ul class="nav-links">
+        <li><a href="#calculators">Calculators</a></li>
+        <li><a href="guides.html">GPS Guides</a></li>
+        <li><a href="rules.html">Transport Rules</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Fleet Management Made Simple</h1>
+      <p>Free calculators, GPS guides & transport rules for Indian fleet owners. Reduce costs, improve efficiency, stay compliant.</p>
+      <a href="#calculators" class="cta-btn">Use Free Calculators</a>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="section">
+    <div class="container">
+      <div class="content-box">
+        <h2>Welcome to FleetGuide.in - India's Complete Fleet Management Platform</h2>
+        <p>
+          FleetGuide.in is India's most comprehensive online platform for fleet owners, transport managers, and commercial vehicle drivers. Whether you operate a single truck or manage a large logistics company, our free tools and expert guides help you optimize operations, reduce costs, and stay compliant with Indian transport regulations.
+        </p>
+        <p>
+          Since 2026, we've helped thousands of fleet operators across India make better decisions through accurate cost calculations, comprehensive GPS tracking guides, and up-to-date transport rule information. All our tools are completely free and designed specifically for the Indian transport industry.
+        </p>
+        
+        <h3>What Makes FleetGuide.in Different?</h3>
+        <ul>
+          <li><strong>100% Free Forever:</strong> No hidden fees, no registration required, no credit card needed</li>
+          <li><strong>India-Specific:</strong> Tools and information tailored for Indian fleet operations and regulations</li>
+          <li><strong>Comprehensive Coverage:</strong> From simple cost calculators to detailed GPS guides and compliance information</li>
+          <li><strong>Expert Knowledge:</strong> Created by transport industry professionals who understand your challenges</li>
+          <li><strong>Always Updated:</strong> Regular updates to reflect latest regulations, technologies, and best practices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculators Section -->
+  <section id="calculators" class="section">
+    <div class="container">
+      <h2 class="section-title">Fleet Cost Calculators</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #666; font-size: 1.05rem;">
+        Make data-driven decisions with our professional fleet calculators. Get instant, accurate estimates for fuel costs, trip expenses, and operational efficiency. Used by thousands of fleet owners across India.
+      </p>
+      
+      <div class="calc-grid">
+        <!-- Fuel Cost Calculator -->
+        <div class="calc-card">
+          <h3>⛽ Fuel Cost Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate fuel expenses for any distance based on current fuel prices and vehicle mileage.</p>
+          <input type="number" id="fc-distance" placeholder="Distance (km)" min="0" step="0.1">
+          <input type="number" id="fc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
+          <input type="number" id="fc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+          <button onclick="calcFuel()" class="calc-btn">Calculate Fuel Cost</button>
+          <div id="fc-result" class="result"></div>
+        </div>
+
+        <!-- Trip Cost Calculator -->
+        <div class="calc-card">
+          <h3>🚛 Trip Cost Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate complete trip costs including fuel, driver charges, tolls, and other expenses.</p>
+          <input type="number" id="tc-distance" placeholder="Distance (km)" min="0" step="0.1">
+          <input type="number" id="tc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
+          <input type="number" id="tc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+          <input type="number" id="tc-driver" placeholder="Driver Cost (₹)" min="0">
+          <input type="number" id="tc-toll" placeholder="Toll (₹)" min="0">
+          <button onclick="calcTrip()" class="calc-btn">Calculate Trip Cost</button>
+          <div id="tc-result" class="result"></div>
+        </div>
+
+        <!-- Cost Per KM -->
+        <div class="calc-card">
+          <h3>📊 Cost per KM Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Analyze operational efficiency by calculating your average cost per kilometer traveled.</p>
+          <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0">
+          <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0" step="0.1">
+          <button onclick="calcCostPerKM()" class="calc-btn">Calculate Cost/KM</button>
+          <div id="cpk-result" class="result"></div>
+        </div>
+      </div>
+
+      <!-- Calculator Guide -->
+      <div class="content-box" style="margin-top: 40px;">
+        <h3>How to Use Our Fleet Calculators</h3>
+        <p>
+          Our calculators are designed to be simple yet powerful. Here's how to get the most accurate results:
+        </p>
+        
+        <h4>Fuel Cost Calculator:</h4>
+        <p>
+          Perfect for trip planning and budgeting. Enter the distance you plan to travel, current fuel price (check your local pump), and your vehicle's actual mileage. The calculator instantly shows fuel required and total cost. Use this before every trip to avoid budget surprises.
+        </p>
+        
+        <h4>Trip Cost Calculator:</h4>
+        <p>
+          Calculate the complete cost of any trip including all expenses. Besides fuel, add driver payment, toll charges, and any other costs. This helps you:
+        </p>
+        <ul>
+          <li>Quote accurate prices to clients</li>
+          <li>Understand true trip profitability</li>
+          <li>Compare different routes by total cost</li>
+          <li>Budget for long-distance hauls</li>
+        </ul>
+        
+        <h4>Cost Per KM Calculator:</h4>
+        <p>
+          Track operational efficiency over time. Calculate your cost per kilometer to:
+        </p>
+        <ul>
+          <li>Compare different vehicles in your fleet</li>
+          <li>Identify which routes are most profitable</li>
+          <li>Benchmark against industry standards (₹8-15/km for most trucks)</li>
+          <li>Spot when maintenance or fuel issues increase costs</li>
+        </ul>
+
+        <h4>Tips for Accurate Calculations:</h4>
+        <ul>
+          <li><strong>Use current prices:</strong> Fuel prices change frequently, use today's rate</li>
+          <li><strong>Account for load:</strong> Heavy loads reduce mileage by 10-20%</li>
+          <li><strong>Include all costs:</strong> Don't forget toll, parking, or permit fees</li>
+          <li><strong>Track actual mileage:</strong> Highway vs city driving affects results</li>
+          <li><strong>Regular updates:</strong> Re-calculate when fuel prices change significantly</li>
+        </ul>
+      </div>
+
+      <!-- Ad Banner -->
+      <div class="ad-banner">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1613694918143455" data-ad-slot="YYYYYYYYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose FleetGuide -->
+  <section class="section features-section">
+    <div class="container">
+      <h2 class="section-title">Why 10,000+ Fleet Owners Trust FleetGuide.in</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="icon">🆓</div>
+          <h3>100% Free</h3>
+          <p>All tools free forever. No registration, no hidden costs, no credit card needed.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h3>Accurate Results</h3>
+          <p>Reliable calculations tested by thousands of fleet operators across India.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🇮🇳</div>
+          <h3>India Focused</h3>
+          <p>Built specifically for Indian transport industry, regulations, and requirements.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📱</div>
+          <h3>Mobile Ready</h3>
+          <p>Works perfectly on smartphones, tablets, and desktops. Calculate on the go.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Get calculations immediately. No waiting, no processing delays.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔒</div>
+          <h3>Privacy Protected</h3>
+          <p>We don't store your data. All calculations happen in your browser.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📚</div>
+          <h3>Expert Guides</h3>
+          <p>Comprehensive guides on GPS tracking, AIS-140, transport rules, and more.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔄</div>
+          <h3>Always Updated</h3>
+          <p>Regular updates for latest regulations, fuel prices, and industry standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Sections -->
+  <section class="section">
+    <div class="container">
+      <div class="content-box">
+        <h2>Complete Fleet Management Solutions</h2>
+        <p>
+          FleetGuide.in offers more than just calculators. We provide comprehensive resources covering every aspect of fleet management in India:
+        </p>
+
+        <h3>GPS Tracking & Vehicle Monitoring</h3>
+        <p>
+          Discover everything about GPS tracking for commercial vehicles. Our detailed guides cover:
+        </p>
+        <ul>
+          <li><strong>GPS Technology Basics:</strong> How GPS works, satellite systems, accuracy factors</li>
+          <li><strong>AIS-140 Compliance:</strong> Complete guide to mandatory GPS standards for Indian commercial vehicles</li>
+          <li><strong>Device Types:</strong> Hardwired vs OBD-II vs battery-powered trackers - which is right for you</li>
+          <li><strong>Installation Guide:</strong> Step-by-step installation for different device types</li>
+          <li><strong>Cost Analysis:</strong> Device costs, monthly subscriptions, ROI calculations</li>
+          <li><strong>Feature Comparison:</strong> Real-time tracking, geofencing, fuel monitoring, driver behavior</li>
+          <li><strong>Vendor Selection:</strong> How to choose the best GPS provider for your fleet size</li>
+        </ul>
+        <p><a href="guides.html" style="color: var(--primary); font-weight: 600;">Read Complete GPS Tracking Guide →</a></p>
+
+        <h3>Transport Rules & Regulations</h3>
+        <p>
+          Stay compliant with Indian transport laws. Our guides cover:
+        </p>
+        <ul>
+          <li><strong>Motor Vehicles Act 1988:</strong> Key provisions affecting commercial vehicles</li>
+          <li><strong>Permits & Licenses:</strong> State, National, All India permits - requirements and procedures</li>
+          <li><strong>Driver Documentation:</strong> Commercial license requirements, medical certificates</li>
+          <li><strong>E-Way Bill System:</strong> When required, how to generate, validity periods</li>
+          <li><strong>Vehicle Insurance:</strong> Types, requirements, penalties for non-compliance</li>
+          <li><strong>Safety Equipment:</strong> Mandatory safety features, speed governors, fire extinguishers</li>
+          <li><strong>Fitness Certificates:</strong> Requirements, renewal procedures, inspection process</li>
+          <li><strong>Penalties & Fines:</strong> Updated fine amounts for common violations</li>
+        </ul>
+        <p><a href="rules.html" style="color: var(--primary); font-weight: 600;">Read Complete Transport Rules Guide →</a></p>
+
+        <h3>Commercial Vehicle Reviews</h3>
+        <p>
+          Make informed vehicle purchase decisions with our expert reviews:
+        </p>
+        <ul>
+          <li><strong>Popular Models:</strong> Tata Ace, Mahindra Bolero, Ashok Leyland, Eicher Pro</li>
+          <li><strong>Detailed Specifications:</strong> Engine, payload, dimensions, features</li>
+          <li><strong>Real-World Performance:</strong> Actual fuel efficiency, maintenance costs, reliability</li>
+          <li><strong>Pros & Cons:</strong> Honest assessment of strengths and weaknesses</li>
+          <li><strong>Cost of Ownership:</strong> Purchase price, running costs, resale value</li>
+          <li><strong>Use Case Recommendations:</strong> Best vehicles for different transport needs</li>
+        </ul>
+        <p><a href="reviews.html" style="color: var(--primary); font-weight: 600;">Read Vehicle Reviews →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="section products-section">
+    <div class="container">
+      <h2 class="section-title">Recommended Fleet Products</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #666;">
+        Quality accessories to improve driver comfort, vehicle organization, and operational efficiency. Handpicked products with excellent ratings.
+      </p>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="images/car-visor-organizer.jpg" alt="Car Visor Organizer" loading="lazy">
+          <h3>Car Visor Organizer</h3>
+          <p style="padding: 0 15px; font-size: 0.9rem;">Keep documents, cards, and essentials organized</p>
+          <p class="price">₹249</p>
+          <a href="https://amzn.to/4aefd9T" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/car-charger-120w.jpg" alt="120W Car Charger" loading="lazy">
+          <h3>120W Fast Charger</h3>
+          <p style="padding: 0 15px; font-size: 0.9rem;">Charge 4 devices simultaneously</p>
+          <p class="price">₹749</p>
+          <a href="https://amzn.to/3ZUM1jg" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/magnetic-phone-holder.jpg" alt="Phone Holder" loading="lazy">
+          <h3>Magnetic Holder</h3>
+          <p style="padding: 0 15px; font-size: 0.9rem;">Secure phone mount with 360° rotation</p>
+          <p class="price">₹299</p>
+          <a href="https://amzn.to/3O5Je4g" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+        <div class="product-card">
+          <img src="images/car-seat-organizer.jpg" alt="Seat Organizer" loading="lazy">
+          <h3>Seat Organizer</h3>
+          <p style="padding: 0 15px; font-size: 0.9rem;">Premium leather multi-compartment storage</p>
+          <p class="price">₹499</p>
+          <a href="https://amzn.to/4aCg9pP" target="_blank" rel="nofollow noopener" class="buy-btn">Buy on Amazon →</a>
+        </div>
+      </div>
+      <p class="disclaimer">As an Amazon Associate, we earn from qualifying purchases at no extra cost to you.</p>
+    </div>
+  </section>
+
+  <!-- Who Uses FleetGuide -->
+  <section class="section">
+    <div class="container">
+      <div class="content-box">
+        <h2>Who Uses FleetGuide.in?</h2>
+        <p>
+          FleetGuide.in serves a diverse community of transport professionals across India:
+        </p>
+
+        <h3>Fleet Owners & Managers</h3>
+        <p>
+          Operators managing 1-100+ vehicles use our tools daily for cost calculation, route planning, and operational decisions. Calculate fuel costs before trips, analyze cost per kilometer to identify inefficiencies, and stay updated on GPS tracking and compliance requirements.
+        </p>
+
+        <h3>Individual Truck Drivers & Owner-Operators</h3>
+        <p>
+          Owner-operators use our calculators to quote accurate trip prices, understand their true operating costs, and maximize profitability. Our guides help them choose the right GPS system and stay compliant with transport regulations.
+        </p>
+
+        <h3>Logistics Companies</h3>
+        <p>
+          Large logistics firms use FleetGuide for quick cost estimates, employee training on GPS systems and compliance, and as a reference for transport regulations across states.
+        </p>
+
+        <h3>Small Business Owners</h3>
+        <p>
+          Businesses with delivery vehicles use our calculators to budget transportation costs, evaluate vehicle purchase decisions, and understand GPS tracking options for delivery fleet monitoring.
+        </p>
+
+        <h3>Transport Students & Professionals</h3>
+        <p>
+          Students and professionals learning fleet management use our comprehensive guides as educational resources on GPS technology, Indian transport laws, and vehicle specifications.
+        </p>
+
+        <h2>Success Stories</h2>
+        <p>
+          Thousands of fleet operators have saved money and improved operations using FleetGuide.in:
+        </p>
+        <ul>
+          <li>Small fleet owner in Mumbai reduced fuel costs by 15% using our trip calculator for better route planning</li>
+          <li>Logistics company in Delhi uses our guides to train new drivers on GPS compliance</li>
+          <li>Individual truck driver from Bangalore credits cost/km calculator for identifying unprofitable routes</li>
+          <li>Transport manager in Pune saved ₹50,000+ by choosing right GPS system using our comparison guide</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="section links-section" id="contact">
+    <div class="container">
+      <div class="links-grid">
+        <div class="link-card">
+          <h3>📚 Resources</h3>
+          <ul>
+            <li><a href="guides.html">GPS Tracking Guide</a></li>
+            <li><a href="rules.html">Transport Rules India</a></li>
+            <li><a href="reviews.html">Vehicle Reviews</a></li>
+            <li><a href="about.html">About FleetGuide</a></li>
+          </ul>
+        </div>
+        <div class="link-card">
+          <h3>🔧 Calculators</h3>
+          <ul>
+            <li><a href="#calculators">Fuel Cost Calculator</a></li>
+            <li><a href="#calculators">Trip Cost Calculator</a></li>
+            <li><a href="#calculators">Cost per KM Tool</a></li>
+            <li><a href="products.html">Recommended Products</a></li>
+          </ul>
+        </div>
+        <div class="link-card">
+          <h3>📞 Contact Us</h3>
+          <ul>
+            <li>Email: <a href="/cdn-cgi/l/email-protection#13757f76766774667a777663617a6572706a53747e727a7f3d707c7e"><span class="__cf_email__" data-cfemail="6a0c060f0f1e0d1f030e0f1a18031c0b09132a0d070b030644090507">[email&#160;protected]</span></a></li>
+            <li><a href="contact.html">Contact Page</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 FleetGuide.in - India's Premier Fleet Management Platform | 
+        <a href="about.html">About</a> | 
+        <a href="privacy.html">Privacy</a> | 
+        <a href="terms.html">Terms</a> | 
+        <a href="contact.html">Contact</a>
+      </p>
+      <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+        Free Fleet Calculators | GPS Tracking Guides | AIS-140 Compliance | Transport Rules India
+      </p>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 We use cookies to improve your experience. <a href=

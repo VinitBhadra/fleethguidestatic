@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Fleet Calculators - Distance, Speed, Fuel, Route & Time Calculators | FleetGuide.in</title>
+  <meta name="description" content="15+ free fleet calculators including distance calculator, speed calculator, fuel calculator, route planner, time calculator, bearing calculator. Professional tools for Indian fleet owners.">
+  <meta name="keywords" content="distance calculator, speed calculator, fuel calculator, route calculator, time calculator, bearing calculator, coordinate calculator, fleet tools">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fleetguide.in/calculators.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="15+ Free Fleet Calculators - FleetGuide.in">
+  <meta property="og:description" content="Distance, speed, fuel, route & time calculators. Professional fleet management tools.">
+  <meta property="og:url" content="https://fleetguide.in/calculators.html">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1613694918143455" crossorigin="anonymous"></script>
+  
+  <style>
+    .calc-page-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .calc-section {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .calc-section h3 {
+      color: var(--secondary);
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
+    .calc-input-group {
+      margin-bottom: 12px;
+    }
+    
+    .calc-input-group label {
+      display: block;
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 5px;
+    }
+    
+    .calc-input-group input,
+    .calc-input-group select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #E0E0E0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    
+    .calc-input-group input:focus,
+    .calc-input-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    .calc-result-box {
+      background: #F0F9FF;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      border-left: 4px solid var(--primary);
+      display: none;
+    }
+    
+    .calc-result-box.show {
+      display: block;
+    }
+    
+    .calc-result-box h4 {
+      color: var(--secondary);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    
+    .calc-result-value {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">FleetGuide.in</a>
+      <ul class="nav-links">
+        <li><a href="index.html#calculators">Home</a></li>
+        <li><a href="calculators.html">All Calculators</a></li>
+        <li><a href="guides.html">GPS Guides</a></li>
+        <li><a href="rules.html">Transport Rules</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>15+ Professional Fleet Calculators</h1>
+      <p>Distance, speed, fuel, route, time & coordinate calculators - All free, instant results</p>
+    </div>
+  </section>
+
+  <!-- Main Calculators -->
+  <section class="section">
+    <div class="container">
+      
+      <div class="calc-page-grid">
+        
+        <!-- 1. Distance Between Two Points Calculator -->
+        <div class="calc-section">
+          <h3>📍 Distance Between Two Points</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate distance between any two locations using coordinates</p>
+          
+          <div class="calc-input-group">
+            <label>Point 1 - Latitude</label>
+            <input type="number" id="dist-lat1" placeholder="e.g., 28.6139" step="any" oninput="calcDistance()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Point 1 - Longitude</label>
+            <input type="number" id="dist-lon1" placeholder="e.g., 77.2090" step="any" oninput="calcDistance()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Point 2 - Latitude</label>
+            <input type="number" id="dist-lat2" placeholder="e.g., 19.0760" step="any" oninput="calcDistance()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Point 2 - Longitude</label>
+            <input type="number" id="dist-lon2" placeholder="e.g., 72.8777" step="any" oninput="calcDistance()">
+          </div>
+          
+          <div id="dist-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 2. Speed Calculator -->
+        <div class="calc-section">
+          <h3>⚡ Speed Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate speed from distance and time</p>
+          
+          <div class="calc-input-group">
+            <label>Distance (km)</label>
+            <input type="number" id="speed-dist" placeholder="500" min="0" step="0.1" oninput="calcSpeed()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Time (hours)</label>
+            <input type="number" id="speed-time" placeholder="8" min="0" step="0.1" oninput="calcSpeed()">
+          </div>
+          
+          <div id="speed-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 3. Time Calculator -->
+        <div class="calc-section">
+          <h3>⏱️ Travel Time Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate time needed for a journey</p>
+          
+          <div class="calc-input-group">
+            <label>Distance (km)</label>
+            <input type="number" id="time-dist" placeholder="500" min="0" step="0.1" oninput="calcTime()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Average Speed (km/h)</label>
+            <input type="number" id="time-speed" placeholder="60" min="0" step="1" oninput="calcTime()">
+          </div>
+          
+          <div id="time-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 4. Pace Calculator -->
+        <div class="calc-section">
+          <h3>🏃 Pace Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate minutes per kilometer</p>
+          
+          <div class="calc-input-group">
+            <label>Distance (km)</label>
+            <input type="number" id="pace-dist" placeholder="10" min="0" step="0.1" oninput="calcPace()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Time (minutes)</label>
+            <input type="number" id="pace-time" placeholder="60" min="0" step="1" oninput="calcPace()">
+          </div>
+          
+          <div id="pace-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 5. Bearing Calculator -->
+        <div class="calc-section">
+          <h3>🧭 Bearing/Heading Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate bearing between two points</p>
+          
+          <div class="calc-input-group">
+            <label>Start Latitude</label>
+            <input type="number" id="bear-lat1" placeholder="28.6139" step="any" oninput="calcBearing()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Start Longitude</label>
+            <input type="number" id="bear-lon1" placeholder="77.2090" step="any" oninput="calcBearing()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>End Latitude</label>
+            <input type="number" id="bear-lat2" placeholder="19.0760" step="any" oninput="calcBearing()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>End Longitude</label>
+            <input type="number" id="bear-lon2" placeholder="72.8777" step="any" oninput="calcBearing()">
+          </div>
+          
+          <div id="bear-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 6. Midpoint Calculator -->
+        <div class="calc-section">
+          <h3>📌 Midpoint Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Find midpoint between two locations</p>
+          
+          <div class="calc-input-group">
+            <label>Point 1 - Latitude</label>
+            <input type="number" id="mid-lat1" placeholder="28.6139" step="any" oninput="calcMidpoint()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Point 1 - Longitude</label>
+            <input type="number" id="mid-lon1" placeholder="77.2090" step="any" oninput="calcMidpoint()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Point 2 - Latitude</label>
+            <input type="number" id="mid-lat2" placeholder="19.0760" step="any" oninput="calcMidpoint()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Point 2 - Longitude</label>
+            <input type="number" id="mid-lon2" placeholder="72.8777" step="any" oninput="calcMidpoint()">
+          </div>
+          
+          <div id="mid-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 7. Radius/Circle Calculator -->
+        <div class="calc-section">
+          <h3>⭕ Radius Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate area coverage from a point</p>
+          
+          <div class="calc-input-group">
+            <label>Center Latitude</label>
+            <input type="number" id="radius-lat" placeholder="28.6139" step="any">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Center Longitude</label>
+            <input type="number" id="radius-lon" placeholder="77.2090" step="any">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Radius (km)</label>
+            <input type="number" id="radius-km" placeholder="50" min="0" step="0.1" oninput="calcRadius()">
+          </div>
+          
+          <div id="radius-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 8. Unit Converter -->
+        <div class="calc-section">
+          <h3>🔄 Distance Unit Converter</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Convert between km, miles, meters, feet</p>
+          
+          <div class="calc-input-group">
+            <label>Value</label>
+            <input type="number" id="unit-value" placeholder="100" min="0" step="0.1" oninput="calcUnits()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>From Unit</label>
+            <select id="unit-from" onchange="calcUnits()">
+              <option value="km">Kilometers</option>
+              <option value="mi">Miles</option>
+              <option value="m">Meters</option>
+              <option value="ft">Feet</option>
+              <option value="nm">Nautical Miles</option>
+            </select>
+          </div>
+          
+          <div id="unit-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 9. Speed Unit Converter -->
+        <div class="calc-section">
+          <h3>🚗 Speed Unit Converter</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Convert km/h, mph, m/s, knots</p>
+          
+          <div class="calc-input-group">
+            <label>Speed</label>
+            <input type="number" id="speed-unit-value" placeholder="100" min="0" step="0.1" oninput="calcSpeedUnits()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>From Unit</label>
+            <select id="speed-unit-from" onchange="calcSpeedUnits()">
+              <option value="kmh">km/h</option>
+              <option value="mph">mph</option>
+              <option value="ms">m/s</option>
+              <option value="knots">Knots</option>
+            </select>
+          </div>
+          
+          <div id="speed-unit-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 10. Fuel Efficiency Converter -->
+        <div class="calc-section">
+          <h3>⛽ Fuel Efficiency Converter</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Convert km/L to mpg and L/100km</p>
+          
+          <div class="calc-input-group">
+            <label>Fuel Efficiency</label>
+            <input type="number" id="fuel-eff-value" placeholder="12" min="0" step="0.1" oninput="calcFuelEff()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Unit</label>
+            <select id="fuel-eff-unit" onchange="calcFuelEff()">
+              <option value="kml">km/L</option>
+              <option value="mpg">MPG (US)</option>
+              <option value="mpg-uk">MPG (UK)</option>
+              <option value="l100">L/100km</option>
+            </select>
+          </div>
+          
+          <div id="fuel-eff-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 11. Route Distance Calculator -->
+        <div class="calc-section">
+          <h3>🗺️ Multi-Point Route Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate total distance for multiple stops</p>
+          
+          <div id="route-points">
+            <div class="calc-input-group">
+              <label>Stop 1 (km from start)</label>
+              <input type="number" class="route-input" placeholder="0" min="0" step="0.1" oninput="calcRoute()">
+            </div>
+            <div class="calc-input-group">
+              <label>Stop 2 (km from start)</label>
+              <input type="number" class="route-input" placeholder="100" min="0" step="0.1" oninput="calcRoute()">
+            </div>
+            <div class="calc-input-group">
+              <label>Stop 3 (km from start)</label>
+              <input type="number" class="route-input" placeholder="250" min="0" step="0.1" oninput="calcRoute()">
+            </div>
+          </div>
+          
+          <div id="route-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 12. Coordinate Format Converter -->
+        <div class="calc-section">
+          <h3>📐 Coordinate Format Converter</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Convert between decimal and DMS formats</p>
+          
+          <div class="calc-input-group">
+            <label>Decimal Latitude</label>
+            <input type="number" id="coord-lat" placeholder="28.6139" step="any" oninput="calcCoord()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Decimal Longitude</label>
+            <input type="number" id="coord-lon" placeholder="77.2090" step="any" oninput="calcCoord()">
+          </div>
+          
+          <div id="coord-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 13. Grade/Slope Calculator -->
+        <div class="calc-section">
+          <h3>📈 Grade/Slope Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate road grade and elevation gain</p>
+          
+          <div class="calc-input-group">
+            <label>Horizontal Distance (km)</label>
+            <input type="number" id="grade-dist" placeholder="10" min="0" step="0.1" oninput="calcGrade()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Elevation Gain (meters)</label>
+            <input type="number" id="grade-elev" placeholder="500" step="1" oninput="calcGrade()">
+          </div>
+          
+          <div id="grade-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 14. Area Calculator -->
+        <div class="calc-section">
+          <h3>📏 Area Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate area from radius or dimensions</p>
+          
+          <div class="calc-input-group">
+            <label>Shape</label>
+            <select id="area-shape" onchange="toggleAreaInputs()">
+              <option value="circle">Circle</option>
+              <option value="rectangle">Rectangle</option>
+            </select>
+          </div>
+          
+          <div id="area-circle-inputs">
+            <div class="calc-input-group">
+              <label>Radius (km)</label>
+              <input type="number" id="area-radius" placeholder="10" min="0" step="0.1" oninput="calcArea()">
+            </div>
+          </div>
+          
+          <div id="area-rect-inputs" style="display:none;">
+            <div class="calc-input-group">
+              <label>Length (km)</label>
+              <input type="number" id="area-length" placeholder="20" min="0" step="0.1" oninput="calcArea()">
+            </div>
+            <div class="calc-input-group">
+              <label>Width (km)</label>
+              <input type="number" id="area-width" placeholder="10" min="0" step="0.1" oninput="calcArea()">
+            </div>
+          </div>
+          
+          <div id="area-result" class="calc-result-box"></div>
+        </div>
+
+        <!-- 15. ETA Calculator -->
+        <div class="calc-section">
+          <h3>🕐 ETA (Estimated Time of Arrival)</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate arrival time with breaks</p>
+          
+          <div class="calc-input-group">
+            <label>Start Time</label>
+            <input type="time" id="eta-start" value="08:00" onchange="calcETA()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Distance (km)</label>
+            <input type="number" id="eta-dist" placeholder="500" min="0" step="0.1" oninput="calcETA()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Average Speed (km/h)</label>
+            <input type="number" id="eta-speed" placeholder="60" min="0" step="1" oninput="calcETA()">
+          </div>
+          
+          <div class="calc-input-group">
+            <label>Break Time (minutes)</label>
+            <input type="number" id="eta-break" placeholder="30" min="0" step="5" oninput="calcETA()">
+          </div>
+          
+          <div id="eta-result" class="calc-result-box"></div>
+        </div>
+
+      </div>
+
+      <!-- Ad Banner -->
+      <div class="ad-banner" style="margin-top: 50px;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1613694918143455" data-ad-slot="YYYYYYYYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- Calculator Guide -->
+      <div class="content-box" style="margin-top: 50px;">
+        <h2>How to Use Fleet Calculators</h2>
+        
+        <h3>Distance Calculator</h3>
+        <p>Calculate accurate distance between two GPS coordinates using the Haversine formula. Perfect for route planning and distance estimation. Enter latitude and longitude for both points to get distance in kilometers and miles.</p>
+        
+        <h3>Speed & Time Calculators</h3>
+        <p>Calculate speed from distance and time, or calculate time needed for a journey. Essential for planning deliveries, estimating arrival times, and optimizing routes.</p>
+        
+        <h3>Bearing Calculator</h3>
+        <p>Find the compass direction between two points. Useful for navigation and understanding route directions. Results given in degrees (0-360°) and cardinal directions (N, NE, E, etc.).</p>
+        
+        <h3>Coordinate Converters</h3>
+        <p>Convert between different coordinate formats (decimal degrees, degrees-minutes-seconds). Essential when working with different GPS devices and mapping systems.</p>
+        
+        <h3>Unit Converters</h3>
+        <p>Convert between metric and imperial units - kilometers to miles, km/h to mph, km/L to mpg. Useful when working with international routes or vehicles.</p>
+        
+        <h3>Route Planning</h3>
+        <p>Calculate total distance for multi-stop routes. Plan efficient delivery routes and estimate total journey distances accurately.</p>
+        
+        <h3>ETA Calculator</h3>
+        <p>Calculate estimated time of arrival including break times. Perfect for informing customers of delivery times and planning driver schedules.</p>
+
+        <h2>Common Use Cases</h2>
+        <ul>
+          <li><strong>Route Planning:</strong> Use distance and time calculators to plan optimal routes</li>
+          <li><strong>Fuel Estimation:</strong> Calculate distance first, then use fuel calculator</li>
+          <li><strong>Driver Scheduling:</strong> Use ETA calculator to plan driver shifts</li>
+          <li><strong>International Routes:</strong> Convert units between metric and imperial</li>
+          <li><strong>GPS Navigation:</strong> Convert coordinates between different formats</li>
+          <li><strong>Area Coverage:</strong> Calculate delivery radius and coverage areas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 FleetGuide.in - 15+ Free Fleet Calculators | 
+        <a href="about.html">About</a> | 
+        <a href="privacy.html">Privacy</a> | 
+        <a href="terms.html">Terms</a> | 
+        <a href="contact.html">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/calculators.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
