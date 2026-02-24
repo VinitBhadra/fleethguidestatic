@@ -673,3 +673,46 @@ html {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* Calculator Result Box - FORCE SHOW */
+.result {
+  background: #F0F9FF;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  border-left: 4px solid var(--primary);
+  display: none;
+  animation: slideIn 0.3s ease;
+}
+
+.result.show {
+  display: block !important;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result h4 {
+  color: var(--secondary);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.result p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.result-value {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+}

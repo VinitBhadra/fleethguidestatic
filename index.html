@@ -39,6 +39,19 @@
   
   <link rel="stylesheet" href="css/style.css">
   
+    <style>
+   
+    .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .calc-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .calc-card h3 { color: #004E89; margin-bottom: 15px; }
+    .calc-card input { width: 100%; padding: 10px; margin-bottom: 10px; border: 2px solid #E0E0E0; border-radius: 8px; font-size: 16px; }
+    .calc-card input:focus { outline: none; border-color: #FF6B35; }
+    .result { margin-top: 15px; padding: 15px; background: #F0F9FF; border-radius: 8px; border-left: 4px solid #FF6B35; display: none; }
+    .result.show { display: block; }
+    .result h4 { color: #004E89; margin-bottom: 10px; }
+    .result-value { color: #FF6B35; font-weight: 700; font-size: 1.2rem; }
+  </style>
+  
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1613694918143455" crossorigin="anonymous"></script>
   
@@ -80,6 +93,7 @@
     }
   }
   </script>
+  
 </head>
 <body>
   <!-- Header -->
@@ -118,37 +132,145 @@
       </p>
       
       <div class="calc-grid">
-        <!-- Fuel Cost Calculator -->
-        <div class="calc-card">
-          <h3>⛽ Fuel Cost Calculator</h3>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate fuel expenses instantly for any distance</p>
-          <input type="number" id="fc-distance" placeholder="Distance (km)" min="0" step="0.1" oninput="calcFuelLive()">
-          <input type="number" id="fc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01" oninput="calcFuelLive()">
-          <input type="number" id="fc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1" oninput="calcFuelLive()">
-          <div id="fc-result" class="result"></div>
-        </div>
+    <!-- Fuel Cost Calculator -->
+    <div class="calc-card">
+      <h3>⛽ Fuel Cost Calculator</h3>
+      <input type="number" id="fc-distance" placeholder="Distance (km)" min="0" step="0.1">
+      <input type="number" id="fc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
+      <input type="number" id="fc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+      <div id="fc-result" class="result"></div>
+    </div>
 
-        <!-- Trip Cost Calculator -->
-        <div class="calc-card">
-          <h3>🚛 Trip Cost Calculator</h3>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Complete trip cost with all expenses</p>
-          <input type="number" id="tc-distance" placeholder="Distance (km)" min="0" step="0.1" oninput="calcTripLive()">
-          <input type="number" id="tc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01" oninput="calcTripLive()">
-          <input type="number" id="tc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1" oninput="calcTripLive()">
-          <input type="number" id="tc-driver" placeholder="Driver Cost (₹)" min="0" oninput="calcTripLive()">
-          <input type="number" id="tc-toll" placeholder="Toll (₹)" min="0" oninput="calcTripLive()">
-          <div id="tc-result" class="result"></div>
-        </div>
+    <!-- Trip Cost Calculator -->
+    <div class="calc-card">
+      <h3>🚛 Trip Cost Calculator</h3>
+      <input type="number" id="tc-distance" placeholder="Distance (km)" min="0" step="0.1">
+      <input type="number" id="tc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
+      <input type="number" id="tc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+      <input type="number" id="tc-driver" placeholder="Driver Cost (₹)" min="0">
+      <input type="number" id="tc-toll" placeholder="Toll (₹)" min="0">
+      <div id="tc-result" class="result"></div>
+    </div>
 
-        <!-- Cost Per KM -->
-        <div class="calc-card">
-          <h3>📊 Cost per KM Calculator</h3>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Analyze operational efficiency instantly</p>
-          <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0" oninput="calcCostPerKMLive()">
-          <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0" step="0.1" oninput="calcCostPerKMLive()">
-          <div id="cpk-result" class="result"></div>
-        </div>
-      </div>
+    <!-- Cost Per KM -->
+    <div class="calc-card">
+      <h3>📊 Cost per KM Calculator</h3>
+      <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0">
+      <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0" step="0.1">
+      <div id="cpk-result" class="result"></div>
+    </div>
+  </div>
+
+  <script>
+    // Add event listeners to all inputs
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fuel Calculator
+      ['fc-distance', 'fc-price', 'fc-mileage'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calcFuelLive);
+      });
+      
+      // Trip Calculator
+      ['tc-distance', 'tc-price', 'tc-mileage', 'tc-driver', 'tc-toll'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calcTripLive);
+      });
+      
+      // Cost per KM
+      ['cpk-total', 'cpk-distance'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calcCostPerKMLive);
+      });
+    });
+
+    // Fuel Calculator
+    function calcFuelLive() {
+      const distance = parseFloat(document.getElementById('fc-distance').value);
+      const price = parseFloat(document.getElementById('fc-price').value);
+      const mileage = parseFloat(document.getElementById('fc-mileage').value);
+      
+      const result = document.getElementById('fc-result');
+      
+      if (!distance || !price || !mileage || distance <= 0 || price <= 0 || mileage <= 0) {
+        result.classList.remove('show');
+        return;
+      }
+      
+      const fuelRequired = (distance / mileage).toFixed(2);
+      const fuelCost = (fuelRequired * price).toFixed(2);
+      const costPerKm = (fuelCost / distance).toFixed(2);
+      
+      result.innerHTML = `
+        <h4>💡 Fuel Cost Calculation:</h4>
+        <p>Distance: <strong>${distance} km</strong></p>
+        <p>Fuel Required: <span class="result-value">${fuelRequired} L</span></p>
+        <p>Fuel Price: <strong>₹${price}/L</strong></p>
+        <p>Vehicle Mileage: <strong>${mileage} km/L</strong></p>
+        <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
+        <p style="font-size: 1.1rem;"><strong>Total Fuel Cost: <span class="result-value">₹${fuelCost}</span></strong></p>
+        <p>Cost per km: ₹${costPerKm}/km</p>
+      `;
+      result.classList.add('show');
+    }
+
+    // Trip Calculator
+    function calcTripLive() {
+      const distance = parseFloat(document.getElementById('tc-distance').value);
+      const price = parseFloat(document.getElementById('tc-price').value);
+      const mileage = parseFloat(document.getElementById('tc-mileage').value);
+      const driver = parseFloat(document.getElementById('tc-driver').value) || 0;
+      const toll = parseFloat(document.getElementById('tc-toll').value) || 0;
+      
+      const result = document.getElementById('tc-result');
+      
+      if (!distance || !price || !mileage || distance <= 0 || price <= 0 || mileage <= 0) {
+        result.classList.remove('show');
+        return;
+      }
+      
+      const fuelCost = (distance / mileage) * price;
+      const total = fuelCost + driver + toll;
+      const costPerKm = (total / distance).toFixed(2);
+      
+      result.innerHTML = `
+        <h4>💡 Trip Cost Breakdown:</h4>
+        <p>Distance: <strong>${distance} km</strong></p>
+        <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
+        <p>Fuel Cost: <span class="result-value">₹${fuelCost.toFixed(2)}</span></p>
+        <p>Driver Cost: <span class="result-value">₹${driver.toFixed(2)}</span></p>
+        <p>Toll Charges: <span class="result-value">₹${toll.toFixed(2)}</span></p>
+        <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
+        <p style="font-size: 1.1rem;"><strong>Total Trip Cost: <span class="result-value">₹${total.toFixed(2)}</span></strong></p>
+        <p>Cost per km: ₹${costPerKm}/km</p>
+      `;
+      result.classList.add('show');
+    }
+
+    // Cost Per KM Calculator
+    function calcCostPerKMLive() {
+      const total = parseFloat(document.getElementById('cpk-total').value);
+      const distance = parseFloat(document.getElementById('cpk-distance').value);
+      
+      const result = document.getElementById('cpk-result');
+      
+      if (!total || !distance || total <= 0 || distance <= 0) {
+        result.classList.remove('show');
+        return;
+      }
+      
+      const costPerKM = (total / distance).toFixed(2);
+      const cost100km = (costPerKM * 100).toFixed(2);
+      const cost1000km = (costPerKM * 1000).toFixed(2);
+      
+      result.innerHTML = `
+        <h4>💡 Cost Per KM Analysis:</h4>
+        <p>Total Cost: <strong>₹${total}</strong></p>
+        <p>Distance: <strong>${distance} km</strong></p>
+        <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
+        <p style="font-size: 1.2rem;"><strong>Cost per KM: <span class="result-value">₹${costPerKM}/km</span></strong></p>
+        <p>Cost for 100 km: ₹${cost100km}</p>
+        <p>Cost for 1,000 km: ₹${cost1000km}</p>
+      `;
+      result.classList.add('show');
+    }
+  </script>
 
       <!-- SEO Content for Calculators -->
       <div class="content-box" style="margin-top: 40px;">
