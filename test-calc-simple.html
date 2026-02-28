@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator Test</title>
+  <style>
+    body { font-family: Arial; padding: 20px; max-width: 1200px; margin: 0 auto; }
+    .calc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .calc-card { border: 2px solid #ccc; padding: 20px; border-radius: 10px; }
+    input { width: 100%; padding: 10px; margin: 5px 0; border: 2px solid #ddd; border-radius: 5px; }
+    .result { margin-top: 15px; padding: 15px; background: #e3f2fd; border-radius: 8px; display: none; }
+    .result.show { display: block; }
+  </style>
+</head>
+<body>
+  <h1>Calculator Test - Type and See Results</h1>
+  
+  <div class="calc-grid">
+    <div class="calc-card">
+      <h3>Fuel Calculator</h3>
+      <input type="number" id="fc-distance" placeholder="Distance (km)">
+      <input type="number" id="fc-price" placeholder="Fuel Price (₹/L)">
+      <input type="number" id="fc-mileage" placeholder="Mileage (km/L)">
+      <div id="fc-result" class="result"></div>
+    </div>
+
+    <div class="calc-card">
+      <h3>Trip Calculator</h3>
+      <input type="number" id="tc-distance" placeholder="Distance (km)">
+      <input type="number" id="tc-price" placeholder="Fuel Price (₹/L)">
+      <input type="number" id="tc-mileage" placeholder="Mileage (km/L)">
+      <input type="number" id="tc-driver" placeholder="Driver Cost (₹)">
+      <input type="number" id="tc-toll" placeholder="Toll (₹)">
+      <div id="tc-result" class="result"></div>
+    </div>
+
+    <div class="calc-card">
+      <h3>Cost/KM Calculator</h3>
+      <input type="number" id="cpk-total" placeholder="Total Cost (₹)">
+      <input type="number" id="cpk-distance" placeholder="Distance (km)">
+      <div id="cpk-result" class="result"></div>
+    </div>
+  </div>
+
+  <script>
+    // Fuel Calculator
+    function calcFuel() {
+      const dist = parseFloat(document.getElementById('fc-distance').value);
+      const price = parseFloat(document.getElementById('fc-price').value);
+      const mileage = parseFloat(document.getElementById('fc-mileage').value);
+      const result = document.getElementById('fc-result');
+      
+      if (!dist || !price || !mileage || dist <= 0 || price <= 0 || mileage <= 0) {
+        result.style.display = 'none';
+        return;
+      }
+      
+      const fuelReq = (dist / mileage).toFixed(2);
+      const cost = (fuelReq * price).toFixed(2);
+      
+      result.innerHTML = `<strong>Fuel Required: ${fuelReq} L</strong><br>Total Cost: ₹${cost}`;
+      result.style.display = 'block';
+    }
+
+    // Trip Calculator
+    function calcTrip() {
+      const dist = parseFloat(document.getElementById('tc-distance').value);
+      const price = parseFloat(document.getElementById('tc-price').value);
+      const mileage = parseFloat(document.getElementById('tc-mileage').value);
+      const driver = parseFloat(document.getElementById('tc-driver').value) || 0;
+      const toll = parseFloat(document.getElementById('tc-toll').value) || 0;
+      const result = document.getElementById('tc-result');
+      
+      if (!dist || !price || !mileage || dist <= 0 || price <= 0 || mileage <= 0) {
+        result.style.display = 'none';
+        return;
+      }
+      
+      const fuel = (dist / mileage) * price;
+      const total = fuel + driver + toll;
+      
+      result.innerHTML = `<strong>Total: ₹${total.toFixed(2)}</strong><br>Fuel: ₹${fuel.toFixed(2)}<br>Driver: ₹${driver}<br>Toll: ₹${toll}`;
+      result.style.display = 'block';
+    }
+
+    // Cost/KM Calculator
+    function calcCostKM() {
+      const total = parseFloat(document.getElementById('cpk-total').value);
+      const dist = parseFloat(document.getElementById('cpk-distance').value);
+      const result = document.getElementById('cpk-result');
+      
+      if (!total || !dist || total <= 0 || dist <= 0) {
+        result.style.display = 'none';
+        return;
+      }
+      
+      const costPerKM = (total / dist).toFixed(2);
+      
+      result.innerHTML = `<strong>Cost per KM: ₹${costPerKM}/km</strong>`;
+      result.style.display = 'block';
+    }
+
+    // Add event listeners
+    window.addEventListener('load', function() {
+      ['fc-distance', 'fc-price', 'fc-mileage'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calcFuel);
+      });
+      
+      ['tc-distance', 'tc-price', 'tc-mileage', 'tc-driver', 'tc-toll'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calcTrip);
+      });
+      
+      ['cpk-total', 'cpk-distance'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calcCostKM);
+      });
+      
+      console.log('Calculators ready!');
+    });
+  </script>
+</body>
+</html>

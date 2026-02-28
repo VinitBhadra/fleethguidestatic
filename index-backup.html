@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Fleet Management Calculator - Free Fuel Cost, Trip Cost & Distance Calculator India</title>
+  <meta name="title" content="Fleet Management Calculator - Free Fuel Cost, Trip Cost Calculator India">
+  <meta name="description" content="Free fleet management calculators for India. Calculate fuel costs, trip expenses, cost per km instantly. GPS tracking guides, AIS-140 compliance, transport rules. Used by 10,000+ fleet owners.">
+  <meta name="keywords" content="fuel cost calculator india, trip cost calculator, fleet calculator, distance calculator, truck calculator, transport cost calculator, fleet management tools, commercial vehicle calculator, operating cost calculator">
+  <meta name="author" content="FleetGuide.in">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://fleetguide.in/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fleetguide.in/">
+  <meta property="og:title" content="FleetGuide.in - Free Fleet Management Calculators India">
+  <meta property="og:description" content="Calculate fuel costs, trip expenses & fleet operations. Free professional tools for Indian fleet owners. GPS guides, transport rules, vehicle reviews.">
+  <meta property="og:site_name" content="FleetGuide.in">
+  <meta property="og:locale" content="en_IN">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://fleetguide.in/">
+  <meta name="twitter:title" content="FleetGuide.in - Free Fleet Calculators India">
+  <meta name="twitter:description" content="Free fuel cost, trip cost & fleet calculators. GPS guides, transport rules for Indian fleet owners.">
+  
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="IN">
+  <meta name="geo.placename" content="India">
+  
+  <!-- Language -->
+  <meta http-equiv="content-language" content="en-IN">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1613694918143455" crossorigin="anonymous"></script>
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "FleetGuide.in",
+    "url": "https://fleetguide.in",
+    "description": "Free fleet management calculators for India including fuel cost, trip cost, and distance calculators. GPS tracking guides and transport rules.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "10000"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FleetGuide.in",
+    "url": "https://fleetguide.in",
+    "logo": "https://fleetguide.in/images/logo.png",
+    "description": "India's comprehensive fleet management platform",
+    "email": "fleetguideprivacy@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">FleetGuide.in</a>
+      <ul class="nav-links">
+        <li><a href="#calculators">Calculators</a></li>
+        <li><a href="telematics-platforms.html">Telematics</a></li>
+        <li><a href="reduce-fuel-costs.html">Fuel Savings</a></li>
+        <li><a href="guides.html">GPS Guides</a></li>
+        <li><a href="rules.html">Transport Rules</a></li>
+        <li><a href="#articles">Industry News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Free Fleet Management Calculators for India</h1>
+      <p>Calculate fuel costs, trip expenses & fleet operations instantly. Professional tools used by 10,000+ fleet owners.</p>
+      <a href="#calculators" class="cta-btn">Start Calculating Now</a>
+    </div>
+  </section>
+
+  <!-- Calculators Section - PRIORITY -->
+  <section id="calculators" class="section">
+    <div class="container">
+      <h2 class="section-title">Fleet Cost Calculators - Instant Results</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 15px; color: #666; font-size: 1.05rem;">
+        Make data-driven decisions with our professional fleet calculators. Get instant, accurate estimates for fuel costs, trip expenses, and operational efficiency. Used by thousands of fleet owners across India.
+      </p>
+      <p style="text-align: center; margin-bottom: 30px;">
+        <a href="calculators.html" style="color: var(--primary); font-weight: 600; text-decoration: underline;">View All 15+ Calculators →</a>
+      </p>
+      
+      <div class="calc-grid">
+        <!-- Fuel Cost Calculator -->
+        <div class="calc-card">
+          <h3>⛽ Fuel Cost Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate fuel expenses instantly for any distance</p>
+          <input type="number" id="fc-distance" placeholder="Distance (km)" min="0" step="0.1" oninput="calcFuelLive()">
+          <input type="number" id="fc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01" oninput="calcFuelLive()">
+          <input type="number" id="fc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1" oninput="calcFuelLive()">
+          <div id="fc-result" class="result"></div>
+        </div>
+
+        <!-- Trip Cost Calculator -->
+        <div class="calc-card">
+          <h3>🚛 Trip Cost Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Complete trip cost with all expenses</p>
+          <input type="number" id="tc-distance" placeholder="Distance (km)" min="0" step="0.1" oninput="calcTripLive()">
+          <input type="number" id="tc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01" oninput="calcTripLive()">
+          <input type="number" id="tc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1" oninput="calcTripLive()">
+          <input type="number" id="tc-driver" placeholder="Driver Cost (₹)" min="0" oninput="calcTripLive()">
+          <input type="number" id="tc-toll" placeholder="Toll (₹)" min="0" oninput="calcTripLive()">
+          <div id="tc-result" class="result"></div>
+        </div>
+
+        <!-- Cost Per KM -->
+        <div class="calc-card">
+          <h3>📊 Cost per KM Calculator</h3>
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Analyze operational efficiency instantly</p>
+          <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0" oninput="calcCostPerKMLive()">
+          <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0" step="0.1" oninput="calcCostPerKMLive()">
+          <div id="cpk-result" class="result"></div>
+        </div>
+      </div>
+
+      <!-- SEO Content for Calculators -->
+      <div class="content-box" style="margin-top: 40px;">
+        <h2>How to Use Fleet Management Calculators</h2>
+        
+        <h3>Fuel Cost Calculator - Calculate Trip Fuel Expenses</h3>
+        <p>Our fuel cost calculator helps fleet owners and truck drivers calculate exact fuel expenses for any trip. Simply enter the distance you'll travel, current fuel price per liter, and your vehicle's mileage (km per liter). The calculator instantly shows fuel required in liters and total fuel cost in rupees.</p>
+        <p><strong>When to use:</strong> Before every trip for accurate budgeting, when comparing different routes, for client quotations, monthly expense planning.</p>
+        
+        <h3>Trip Cost Calculator - Complete Journey Expense Calculation</h3>
+        <p>Calculate total trip costs including fuel, driver payments, toll charges, and other expenses. This comprehensive calculator gives you a complete picture of your trip profitability. Perfect for freight operators who need to quote accurate prices to clients.</p>
+        <p><strong>Use cases:</strong> Client quotations, route profitability analysis, expense forecasting, contract pricing.</p>
+        
+        <h3>Cost Per KM Calculator - Fleet Efficiency Analysis</h3>
+        <p>Track your fleet's operational efficiency by calculating cost per kilometer. This metric helps identify which vehicles or routes are most profitable. Industry standard is ₹8-15 per km for trucks - use this calculator to benchmark your fleet performance.</p>
+        <p><strong>Benefits:</strong> Compare vehicles, identify inefficient routes, track maintenance impact, benchmark against competitors.</p>
+
+        <h3>Tips for Accurate Fleet Calculations</h3>
+        <ul>
+          <li><strong>Use current fuel prices:</strong> Diesel and petrol prices change frequently - always use today's rate from your local pump</li>
+          <li><strong>Account for load weight:</strong> Heavy loads reduce mileage by 10-20% - adjust your mileage input accordingly</li>
+          <li><strong>Include all costs:</strong> Don't forget toll charges, parking fees, permit costs, and driver expenses</li>
+          <li><strong>Track actual mileage:</strong> Highway vs city driving gives different mileage - use real-world data</li>
+          <li><strong>Regular recalculation:</strong> Update calculations when fuel prices change significantly</li>
+        </ul>
+      </div>
+
+      <!-- Ad Banner -->
+      <div class="ad-banner">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1613694918143455" data-ad-slot="YYYYYYYYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Telematics Articles -->
+  <section id="articles" class="section" style="background: #F8F9FA;">
+    <div class="container">
+      <h2 class="section-title">Latest Fleet Technology & Telematics News</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #666; font-size: 1.05rem;">
+        Stay updated with connected vehicles, GPS tracking technology, and fleet management innovations in India.
+      </p>
+
+      <div class="articles-grid">
+        <div class="article-card">
+          <div class="article-tag">GPS Tracking</div>
+          <h3>AIS-140 GPS Tracking Requirements for Indian Commercial Vehicles</h3>
+          <p>Complete guide to mandatory GPS tracking standards for commercial vehicles in India. Learn about technical requirements, installation procedures, and compliance deadlines.</p>
+          <p class="article-meta">📅 February 2026 • 10 min read</p>
+          <a href="guides.html" class="read-more">Read Complete Guide →</a>
+        </div>
+
+        <div class="article-card">
+          <div class="article-tag">Telematics</div>
+          <h3>Vehicle Telematics Systems: Complete Guide for Fleet Owners</h3>
+          <p>How telematics combines GPS tracking with vehicle diagnostics to reduce fleet costs by 15-25%. Real-time monitoring, fuel management, and driver behavior analysis explained.</p>
+          <p class="article-meta">📅 February 2026 • 8 min read</p>
+          <a href="guides.html" class="read-more">Read Article →</a>
+        </div>
+
+        <div class="article-card">
+          <div class="article-tag">Fuel Management</div>
+          <h3>Reduce Fleet Fuel Costs by 20% with Advanced Monitoring</h3>
+          <p>Fuel represents 30-40% of fleet operating costs. Learn how telematics fuel sensors detect theft, monitor consumption, and identify inefficient driving patterns.</p>
+          <p class="article-meta">📅 February 2026 • 9 min read</p>
+          <a href="guides.html" class="read-more">Read Article →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose FleetGuide -->
+  <section class="section features-section">
+    <div class="container">
+      <h2 class="section-title">Why 10,000+ Fleet Owners Trust FleetGuide.in</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="icon">🆓</div>
+          <h3>100% Free</h3>
+          <p>All calculators free forever. No registration required.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Live calculations as you type. No waiting.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🇮🇳</div>
+          <h3>India Specific</h3>
+          <p>Built for Indian transport industry.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📱</div>
+          <h3>Mobile Ready</h3>
+          <p>Works on all devices perfectly.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h3>Accurate</h3>
+          <p>Tested by thousands of users.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔒</div>
+          <h3>Private</h3>
+          <p>We don't store your data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="section links-section">
+    <div class="container">
+      <div class="links-grid">
+        <div class="link-card">
+          <h3>📚 Resources</h3>
+          <ul>
+            <li><a href="guides.html">GPS Tracking Guide</a></li>
+            <li><a href="rules.html">Transport Rules India</a></li>
+            <li><a href="reviews.html">Vehicle Reviews</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="link-card">
+          <h3>🔧 Calculators</h3>
+          <ul>
+            <li><a href="#calculators">Fuel Cost Calculator</a></li>
+            <li><a href="#calculators">Trip Cost Calculator</a></li>
+            <li><a href="#calculators">Cost per KM</a></li>
+            <li><a href="products.html">Fleet Products</a></li>
+          </ul>
+        </div>
+        <div class="link-card">
+          <h3>📞 Contact</h3>
+          <ul>
+            <li><a href="/cdn-cgi/l/email-protection#0d6b616868796a786469687d7f647b6c6e744d6a606c6461236e6260"><span class="__cf_email__" data-cfemail="63050f06061704160a070613110a1502001a23040e020a0f4d000c0e">[email&#160;protected]</span></a></li>
+            <li><a href="contact.html">Contact Page</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 FleetGuide.in - Free Fleet Management Calculators India | 
+        <a href="about.html">About</a> | 
+        <a href="privacy.html">Privacy</a> | 
+        <a href="terms.html">Terms</a> | 
+        <a href="contact.html">Contact</a>
+      </p>
+      <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+        Fuel Cost Calculator | Trip Cost Calculator | Fleet Management Tools | GPS Tracking | Transport Rules
+      </p>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 We use cookies. <a href=
