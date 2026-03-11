@@ -3,340 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Primary Meta Tags -->
-  <title>Fleet Management Calculator - Free Fuel Cost, Trip Cost & Distance Calculator India</title>
-  <meta name="title" content="Fleet Management Calculator - Free Fuel Cost, Trip Cost Calculator India">
-  <meta name="description" content="Free fleet management calculators for India. Calculate fuel costs, trip expenses, cost per km instantly. GPS tracking guides, telematics platforms, fuel savings tips.">
-  <meta name="keywords" content="fuel cost calculator india, trip cost calculator, fleet calculator, distance calculator, truck calculator, transport cost calculator">
-  <meta name="robots" content="index, follow">
-  
-  <!-- Canonical URL -->
+  <title>Fleet Management Calculators for India | FleetGuide.in</title>
+  <meta name="description" content="Free educational fleet management calculators for Indian truck owners and transport businesses. Calculate fuel costs, trip expenses, and optimize fleet operations.">
+  <meta name="keywords" content="fleet calculator india, fuel cost calculator, truck calculator, transport calculator">
   <link rel="canonical" href="https://fleetguide.in/">
-  
   <link rel="stylesheet" href="css/style.css">
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1613694918143455" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Header -->
+  
   <header>
-    <nav>
-      <a href="index.html" class="logo">FleetGuide.in</a>
-      <ul class="nav-links">
-        <li><a href="#calculators">Calculators</a></li>
-        <li><a href="telematics-platforms.html">Telematics</a></li>
-        <li><a href="reduce-fuel-costs.html">Fuel Savings</a></li>
-        <li><a href="guides.html">GPS Guides</a></li>
-        <li><a href="rules.html">Transport Rules</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-    </nav>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">FleetGuide.in</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Learning Articles</a></li>
+          <li><a href="calculators.html">All Calculators</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>Free Fleet Management Calculators for India</h1>
-      <p>Calculate fuel costs, trip expenses & fleet operations instantly. Professional tools used by 10,000+ fleet owners.</p>
-      <a href="#calculators" class="cta-btn">Start Calculating Now</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Fleet Management Calculators for Trucks & Transport</h1>
+        <p>Educational calculators designed for truck owners, fleet managers, and transport businesses in India. Learn to calculate fuel costs, optimize routes, and improve operational efficiency.</p>
+      </div>
+    </section>
 
-  <!-- Calculators Section -->
-  <section id="calculators" class="section">
-    <div class="container">
-      <h2 class="section-title">Fleet Cost Calculators - Instant Results</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto 15px; color: #666;">
-        Get instant, accurate estimates for fuel costs, trip expenses, and operational efficiency.
-      </p>
-      <p style="text-align: center; margin-bottom: 30px;">
-        <a href="calculators.html" style="color: var(--primary); font-weight: 600;">View All 15+ Calculators →</a>
-      </p>
-      
-      <div class="calc-grid">
-        <!-- Fuel Cost Calculator -->
-        <div class="calc-card">
-          <h3>⛽ Fuel Cost Calculator</h3>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Calculate fuel expenses instantly</p>
-          <input type="number" id="fc-distance" placeholder="Distance (km)" min="0" step="0.1">
-          <input type="number" id="fc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
-          <input type="number" id="fc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
-          <div id="fc-result" class="result"></div>
-        </div>
-
-        <!-- Trip Cost Calculator -->
-        <div class="calc-card">
-          <h3>🚛 Trip Cost Calculator</h3>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Complete trip cost with all expenses</p>
-          <input type="number" id="tc-distance" placeholder="Distance (km)" min="0" step="0.1">
-          <input type="number" id="tc-price" placeholder="Fuel Price (₹/L)" min="0" step="0.01">
-          <input type="number" id="tc-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
-          <input type="number" id="tc-driver" placeholder="Driver Cost (₹)" min="0">
-          <input type="number" id="tc-toll" placeholder="Toll (₹)" min="0">
-          <div id="tc-result" class="result"></div>
-        </div>
-
-        <!-- Cost Per KM -->
-        <div class="calc-card">
-          <h3>📊 Cost per KM Calculator</h3>
-          <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Analyze operational efficiency</p>
-          <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0">
-          <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0" step="0.1">
-          <div id="cpk-result" class="result"></div>
+    <section class="section">
+      <div class="container">
+        <h2>Learning & Guides</h2>
+        <a href="articles/what-is-fleet-management.html" class="article-card">What is Fleet Management and Why It Matters</a>
+        <a href="articles/how-to-calculate-fuel-cost.html" class="article-card">How to Calculate Fuel Cost for Your Truck</a>
+        <a href="articles/understanding-gps-tracking.html" class="article-card">Understanding GPS Tracking for Fleets</a>
+        <div style="margin-top: 20px;">
+          <a href="articles.html" style="color: #FF6B35; font-weight: 600; text-decoration: none;">View All 25 Articles →</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- New High-Value Content Links -->
-  <section class="section" style="background: #F8F9FA;">
-    <div class="container">
-      <h2 class="section-title">Popular Guides</h2>
-      <div class="calc-grid">
-        <div class="calc-card" style="text-align: center;">
-          <h3>🔍 Compare GPS Platforms</h3>
-          <p>15 telematics platforms compared with real prices, pros & cons</p>
-          <a href="telematics-platforms.html" class="cta-btn" style="margin-top: 15px;">View Comparison →</a>
+    <section class="section">
+      <div class="container">
+        <h2>Quick Calculators</h2>
+        <div class="calc-grid">
+          
+          <div class="calc-card">
+            <h3>Fuel Cost Calculator</h3>
+            <p>Calculate fuel expenses based on distance, price, and mileage</p>
+            <input type="number" id="fuel-distance" placeholder="Distance (km)" min="0">
+            <input type="number" id="fuel-price" placeholder="Fuel Price (₹/L)" min="0">
+            <input type="number" id="fuel-mileage" placeholder="Mileage (km/L)" min="0">
+            <div id="fuel-result" class="result"></div>
+          </div>
+
+          <div class="calc-card">
+            <h3>Trip Cost Calculator</h3>
+            <p>Calculate total trip cost including fuel, driver, and tolls</p>
+            <input type="number" id="trip-distance" placeholder="Distance (km)" min="0">
+            <input type="number" id="trip-price" placeholder="Fuel Price (₹/L)" min="0">
+            <input type="number" id="trip-mileage" placeholder="Mileage (km/L)" min="0">
+            <input type="number" id="trip-driver" placeholder="Driver Cost (₹)" min="0">
+            <input type="number" id="trip-toll" placeholder="Toll (₹)" min="0">
+            <div id="trip-result" class="result"></div>
+          </div>
+
+          <div class="calc-card">
+            <h3>Cost Per KM</h3>
+            <p>Calculate operational efficiency per kilometer</p>
+            <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0">
+            <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0">
+            <div id="cpk-result" class="result"></div>
+          </div>
+
         </div>
-        <div class="calc-card" style="text-align: center;">
-          <h3>💰 Reduce Fuel Costs 20%</h3>
-          <p>15 proven strategies to save ₹50,000-1,00,000 per truck yearly</p>
-          <a href="reduce-fuel-costs.html" class="cta-btn" style="margin-top: 15px;">Read Guide →</a>
-        </div>
-        <div class="calc-card" style="text-align: center;">
-          <h3>📐 All Calculators</h3>
-          <p>18 professional calculators - distance, speed, route planning & more</p>
-          <a href="calculators.html" class="cta-btn" style="margin-top: 15px;">See All Tools →</a>
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="calculators.html" class="btn">View All Calculators</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Why Choose FleetGuide -->
-  <section class="section features-section">
-    <div class="container">
-      <h2 class="section-title">Why 10,000+ Fleet Owners Trust FleetGuide.in</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <div class="icon">🆓</div>
-          <h3>100% Free</h3>
-          <p>All tools free forever. No registration required.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">⚡</div>
-          <h3>Instant Results</h3>
-          <p>Live calculations as you type. No waiting.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🇮🇳</div>
-          <h3>India Specific</h3>
-          <p>Built for Indian transport industry.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">📱</div>
-          <h3>Mobile Ready</h3>
-          <p>Works perfectly on all devices.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">✅</div>
-          <h3>Accurate</h3>
-          <p>Tested by thousands of users.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🔒</div>
-          <h3>Private</h3>
-          <p>We don't store your data.</p>
+    <section class="section">
+      <div class="container">
+        <h2>About Our Calculators</h2>
+        <div class="content-box">
+          <p>FleetGuide provides educational fleet management calculators to help transport businesses in India improve efficiency and reduce costs.</p>
+          <p>Whether you need to calculate fuel expenses, estimate trip costs, or analyze operational efficiency, our tools are designed for practical, real-world use by truck owners and fleet managers across India.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Quick Links -->
-  <section class="section links-section">
-    <div class="container">
-      <div class="links-grid">
-        <div class="link-card">
-          <h3>📚 Resources</h3>
-          <ul>
-            <li><a href="telematics-platforms.html">Compare GPS Platforms</a></li>
-            <li><a href="reduce-fuel-costs.html">Reduce Fuel Costs</a></li>
-            <li><a href="guides.html">GPS Tracking Guide</a></li>
-            <li><a href="rules.html">Transport Rules</a></li>
-            <li><a href="reviews.html">Vehicle Reviews</a></li>
-          </ul>
-        </div>
-        <div class="link-card">
-          <h3>🔧 Calculators</h3>
-          <ul>
-            <li><a href="#calculators">Fuel Cost Calculator</a></li>
-            <li><a href="#calculators">Trip Cost Calculator</a></li>
-            <li><a href="#calculators">Cost per KM</a></li>
-            <li><a href="calculators.html">All 18 Calculators</a></li>
-          </ul>
-        </div>
-        <div class="link-card">
-          <h3>📞 Contact</h3>
-          <ul>
-            <li><a href="mailto:fleetguideprivacy@gmail.com">fleetguideprivacy@gmail.com</a></li>
-            <li><a href="contact.html">Contact Page</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 FleetGuide.in - Free Fleet Management Calculators India | 
-        <a href="about.html">About</a> | 
-        <a href="privacy.html">Privacy</a> | 
-        <a href="terms.html">Terms</a> | 
+      <div class="footer-links">
+        <a href="calculators.html">All Calculators</a>
+        <a href="articles.html">Learning Articles</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
         <a href="contact.html">Contact</a>
-      </p>
-      <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
-        Email: <a href="mailto:fleetguideprivacy@gmail.com" style="color: inherit;">fleetguideprivacy@gmail.com</a>
-      </p>
+      </div>
+      <div class="footer-text">
+        Educational calculators for fleet management. Verify with qualified consultants for business-critical decisions.
+      </div>
+      <div class="footer-text">
+        Email: <a href="mailto:fleetguideprivacy@gmail.com" style="color: #004E89;">fleetguideprivacy@gmail.com</a>
+      </div>
+      <div class="copyright">
+        © 2026 FleetGuide.in
+      </div>
     </div>
   </footer>
 
-  <!-- Cookie Consent -->
-  <div id="cookie-banner" class="cookie-banner">
-    <p>🍪 We use cookies. <a href="privacy.html">Learn more</a></p>
-    <button onclick="acceptCookies()">Accept</button>
-  </div>
-
   <script src="js/main.js"></script>
-  
-  <!-- Inline Calculator Script for Guaranteed Functionality -->
-  <script>
-    // Ensure calculators work even if main.js has issues
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('Calculator inline script loaded');
-      
-      // Fuel Calculator
-      function calcFuel() {
-        try {
-          const dist = parseFloat(document.getElementById('fc-distance').value);
-          const price = parseFloat(document.getElementById('fc-price').value);
-          const mileage = parseFloat(document.getElementById('fc-mileage').value);
-          const result = document.getElementById('fc-result');
-          
-          if (!dist || !price || !mileage || dist <= 0 || price <= 0 || mileage <= 0) {
-            result.style.display = 'none';
-            return;
-          }
-          
-          const fuelReq = (dist / mileage).toFixed(2);
-          const cost = (fuelReq * price).toFixed(2);
-          const costPerKm = (cost / dist).toFixed(2);
-          
-          result.innerHTML = `
-            <h4>💡 Fuel Cost Calculation:</h4>
-            <p>Fuel Required: <strong>${fuelReq} L</strong></p>
-            <p>Total Cost: <strong>₹${cost}</strong></p>
-            <p>Cost per km: ₹${costPerKm}/km</p>
-          `;
-          result.style.display = 'block';
-        } catch (e) {
-          console.error('Fuel calc error:', e);
-        }
-      }
-      
-      // Trip Calculator
-      function calcTrip() {
-        try {
-          const dist = parseFloat(document.getElementById('tc-distance').value);
-          const price = parseFloat(document.getElementById('tc-price').value);
-          const mileage = parseFloat(document.getElementById('tc-mileage').value);
-          const driver = parseFloat(document.getElementById('tc-driver').value) || 0;
-          const toll = parseFloat(document.getElementById('tc-toll').value) || 0;
-          const result = document.getElementById('tc-result');
-          
-          if (!dist || !price || !mileage || dist <= 0 || price <= 0 || mileage <= 0) {
-            result.style.display = 'none';
-            return;
-          }
-          
-          const fuel = (dist / mileage) * price;
-          const total = fuel + driver + toll;
-          const costPerKm = (total / dist).toFixed(2);
-          
-          result.innerHTML = `
-            <h4>💡 Trip Cost Breakdown:</h4>
-            <p>Fuel: ₹${fuel.toFixed(2)}</p>
-            <p>Driver: ₹${driver.toFixed(2)}</p>
-            <p>Toll: ₹${toll.toFixed(2)}</p>
-            <hr style="margin: 10px 0; border: none; border-top: 1px solid #E0E0E0;">
-            <p><strong>Total: ₹${total.toFixed(2)}</strong></p>
-            <p>Cost per km: ₹${costPerKm}/km</p>
-          `;
-          result.style.display = 'block';
-        } catch (e) {
-          console.error('Trip calc error:', e);
-        }
-      }
-      
-      // Cost Per KM Calculator
-      function calcCostKM() {
-        try {
-          const total = parseFloat(document.getElementById('cpk-total').value);
-          const dist = parseFloat(document.getElementById('cpk-distance').value);
-          const result = document.getElementById('cpk-result');
-          
-          if (!total || !dist || total <= 0 || dist <= 0) {
-            result.style.display = 'none';
-            return;
-          }
-          
-          const costPerKM = (total / dist).toFixed(2);
-          const cost100 = (costPerKM * 100).toFixed(2);
-          const cost1000 = (costPerKM * 1000).toFixed(2);
-          
-          result.innerHTML = `
-            <h4>💡 Cost Per KM Analysis:</h4>
-            <p><strong>Cost per KM: ₹${costPerKM}/km</strong></p>
-            <p>Cost for 100 km: ₹${cost100}</p>
-            <p>Cost for 1,000 km: ₹${cost1000}</p>
-          `;
-          result.style.display = 'block';
-        } catch (e) {
-          console.error('Cost/KM calc error:', e);
-        }
-      }
-      
-      // Add event listeners
-      ['fc-distance', 'fc-price', 'fc-mileage'].forEach(id => {
-        const elem = document.getElementById(id);
-        if (elem) {
-          elem.addEventListener('input', calcFuel);
-          elem.addEventListener('change', calcFuel);
-        }
-      });
-      
-      ['tc-distance', 'tc-price', 'tc-mileage', 'tc-driver', 'tc-toll'].forEach(id => {
-        const elem = document.getElementById(id);
-        if (elem) {
-          elem.addEventListener('input', calcTrip);
-          elem.addEventListener('change', calcTrip);
-        }
-      });
-      
-      ['cpk-total', 'cpk-distance'].forEach(id => {
-        const elem = document.getElementById(id);
-        if (elem) {
-          elem.addEventListener('input', calcCostKM);
-          elem.addEventListener('change', calcCostKM);
-        }
-      });
-      
-      console.log('All calculator event listeners attached!');
-    });
-  </script>
 </body>
 </html>
