@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fleet Management Calculators & Tools | FleetGuide</title>
+  <meta name="description" content="Free fleet management calculators, unit converters, and educational resources for truck owners and transport businesses worldwide. Multi-language support available.">
+  <meta name="keywords" content="fleet calculator, fuel cost calculator, truck calculator, transport calculator, unit converter, currency converter">
+  <link rel="canonical" href="https://fleetguide.in/">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Multi-language selector */
+    .lang-selector {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      z-index: 99;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .lang-selector select {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    /* 4-column grid for calculators */
+    .calc-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: 1200px) {
+      .calc-grid-4 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .calc-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .calc-grid-4 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Language Selector -->
+  <div class="lang-selector">
+    <select id="language-select" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="pt">Português</option>
+      <option value="hi">हिन्दी</option>
+      <option value="zh">中文</option>
+      <option value="ar">العربية</option>
+      <option value="ru">Русский</option>
+      <option value="ja">日本語</option>
+    </select>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">FleetGuide</a>
+        <ul class="nav-links">
+          <li><a href="index.html" data-translate="nav_home">Home</a></li>
+          <li><a href="articles.html" data-translate="nav_articles">Learning Articles</a></li>
+          <li><a href="calculators.html" data-translate="nav_calculators">All Calculators</a></li>
+          <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 50px 0 40px; background: linear-gradient(135deg, #004E89 0%, #006BB3 100%); color: white;">
+      <div class="container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 20px; color: white;" data-translate="hero_title">Professional Fleet Management Calculators & Tools</h1>
+        <p style="font-size: 1.15rem; margin-bottom: 25px; opacity: 0.95;" data-translate="hero_subtitle">Free calculators, unit converters, and educational resources for transport businesses worldwide</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+          <div style="background: rgba(255,255,255,0.2); padding: 15px 20px; border-radius: 8px;">
+            <div style="font-size: 1.8rem; font-weight: 700;">12+</div>
+            <div style="font-size: 0.9rem;" data-translate="hero_calculators">Calculators</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.2); padding: 15px 20px; border-radius: 8px;">
+            <div style="font-size: 1.8rem; font-weight: 700;">25+</div>
+            <div style="font-size: 0.9rem;" data-translate="hero_articles">Articles</div>
+          </div>
+          <div style="background: rgba(255,255,255,0.2); padding: 15px 20px; border-radius: 8px;">
+            <div style="font-size: 1.8rem; font-weight: 700;">10+</div>
+            <div style="font-size: 0.9rem;" data-translate="hero_languages">Languages</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fleet Calculators -->
+    <section class="section" style="padding: 40px 0;">
+      <div class="container">
+        <h2 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center;" data-translate="section_fleet">Fleet Management Calculators</h2>
+        
+        <div class="calc-grid-4">
+          
+          <!-- 1. Fuel Cost -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">⛽ <span data-translate="calc_fuel">Fuel Cost</span></h3>
+            <input type="number" id="fuel-distance" placeholder="Distance (km)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="fuel-price" placeholder="Fuel Price" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="fuel-mileage" placeholder="Mileage (km/L)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <div id="fuel-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 2. Trip Cost -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🚛 <span data-translate="calc_trip">Trip Cost</span></h3>
+            <input type="number" id="trip-distance" placeholder="Distance" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="trip-price" placeholder="Fuel Price" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="trip-mileage" placeholder="Mileage" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="trip-driver" placeholder="Driver Cost" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="trip-toll" placeholder="Toll" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <div id="trip-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 3. Cost Per KM -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">📊 <span data-translate="calc_cpk">Cost/KM</span></h3>
+            <input type="number" id="cpk-total" placeholder="Total Cost" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="cpk-distance" placeholder="Distance" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <div id="cpk-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 4. Distance -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">📍 <span data-translate="calc_distance">Distance</span></h3>
+            <input type="number" id="dist-lat1" placeholder="Start Lat" step="0.000001" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="dist-lon1" placeholder="Start Lon" step="0.000001" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="dist-lat2" placeholder="End Lat" step="0.000001" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="dist-lon2" placeholder="End Lon" step="0.000001" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <div id="dist-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 5. Route Optimizer -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🗺️ <span data-translate="calc_route">Route</span></h3>
+            <input type="number" id="route-stops" placeholder="Stops" min="2" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="route-dist" placeholder="Total KM" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="route-fuel" placeholder="Cost/KM" min="0" step="0.1" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <div id="route-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 6. Load Optimizer -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">📦 <span data-translate="calc_load">Load</span></h3>
+            <input type="number" id="load-capacity" placeholder="Capacity (kg)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="load-current" placeholder="Current (kg)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="load-items" placeholder="Item (kg)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <div id="load-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 7. Break-Even -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">💰 <span data-translate="calc_breakeven">Break-Even</span></h3>
+            <input type="number" id="be-fixed" placeholder="Fixed Cost" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="be-variable" placeholder="Variable/Trip" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="be-revenue" placeholder="Revenue/Trip" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <div id="be-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 8. Maintenance -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🔧 <span data-translate="calc_maint">Maintenance</span></h3>
+            <input type="number" id="maint-oil" placeholder="Oil" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="maint-tire" placeholder="Tires" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="maint-service" placeholder="Service" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <input type="number" id="maint-other" placeholder="Other" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <div id="maint-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Unit & Currency Converters -->
+    <section class="section" style="padding: 40px 0; background: #f8f9fa;">
+      <div class="container">
+        <h2 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center;" data-translate="section_converters">Unit & Currency Converters</h2>
+        
+        <div class="calc-grid-4">
+          
+          <!-- 9. Distance Converter -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">📏 <span data-translate="conv_distance">Distance</span></h3>
+            <input type="number" id="conv-dist-val" placeholder="Value" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <select id="conv-dist-from" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="km">Kilometers</option>
+              <option value="mi">Miles</option>
+              <option value="m">Meters</option>
+              <option value="ft">Feet</option>
+            </select>
+            <select id="conv-dist-to" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="mi">Miles</option>
+              <option value="km">Kilometers</option>
+              <option value="m">Meters</option>
+              <option value="ft">Feet</option>
+            </select>
+            <div id="conv-dist-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 10. Weight Converter -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">⚖️ <span data-translate="conv_weight">Weight</span></h3>
+            <input type="number" id="conv-weight-val" placeholder="Value" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <select id="conv-weight-from" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="kg">Kilograms</option>
+              <option value="lb">Pounds</option>
+              <option value="ton">Tons</option>
+              <option value="oz">Ounces</option>
+            </select>
+            <select id="conv-weight-to" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="lb">Pounds</option>
+              <option value="kg">Kilograms</option>
+              <option value="ton">Tons</option>
+              <option value="oz">Ounces</option>
+            </select>
+            <div id="conv-weight-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 11. Volume Converter -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🛢️ <span data-translate="conv_volume">Volume</span></h3>
+            <input type="number" id="conv-vol-val" placeholder="Value" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <select id="conv-vol-from" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="L">Liters</option>
+              <option value="gal">Gallons (US)</option>
+              <option value="ml">Milliliters</option>
+              <option value="m3">Cubic Meters</option>
+            </select>
+            <select id="conv-vol-to" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="gal">Gallons (US)</option>
+              <option value="L">Liters</option>
+              <option value="ml">Milliliters</option>
+              <option value="m3">Cubic Meters</option>
+            </select>
+            <div id="conv-vol-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+          <!-- 12. Currency Converter -->
+          <div class="calc-card" style="padding: 18px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">💱 <span data-translate="conv_currency">Currency</span></h3>
+            <input type="number" id="conv-curr-val" placeholder="Amount" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
+            <select id="conv-curr-from" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="INR">INR</option>
+              <option value="JPY">JPY</option>
+              <option value="CNY">CNY</option>
+            </select>
+            <select id="conv-curr-to" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+              <option value="INR">INR</option>
+              <option value="JPY">JPY</option>
+              <option value="CNY">CNY</option>
+            </select>
+            <div id="conv-curr-result" class="result" style="font-size: 0.85rem;"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" style="padding: 40px 0;">
+      <div class="container">
+        <h2 style="font-size: 1.8rem; margin-bottom: 30px; text-align: center;" data-translate="section_features">Why Choose FleetGuide</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+          <div style="text-align: center; padding: 25px;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🌍</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-translate="feat_global">Global Support</h3>
+            <p style="color: #666;" data-translate="feat_global_desc">Multi-language support for users worldwide</p>
+          </div>
+          <div style="text-align: center; padding: 25px;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🎓</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-translate="feat_edu">Educational</h3>
+            <p style="color: #666;" data-translate="feat_edu_desc">25+ articles on fleet management topics</p>
+          </div>
+          <div style="text-align: center; padding: 25px;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">⚡</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-translate="feat_fast">Instant Results</h3>
+            <p style="color: #666;" data-translate="feat_fast_desc">Real-time calculations as you type</p>
+          </div>
+          <div style="text-align: center; padding: 25px;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🔒</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-translate="feat_privacy">Privacy First</h3>
+            <p style="color: #666;" data-translate="feat_privacy_desc">All calculations done locally in your browser</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Resources -->
+    <section class="section" style="padding: 40px 0; background: #f8f9fa;">
+      <div class="container">
+        <h2 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;" data-translate="section_learning">Learning Resources</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 20px;">
+          <a href="articles/what-is-fleet-management.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">What is Fleet Management</a>
+          <a href="articles/how-to-calculate-fuel-cost.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">How to Calculate Fuel Cost</a>
+          <a href="articles/how-to-reduce-fuel-costs.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">Reduce Fuel Costs</a>
+          <a href="articles/understanding-gps-tracking.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">GPS Tracking Guide</a>
+        </div>
+        <div style="text-align: center;">
+          <a href="articles.html" class="btn" data-translate="btn_all_articles">View All 25 Articles</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="margin-top: 50px;">
+    <div class="container">
+      <div class="footer-links">
+        <a href="calculators.html" data-translate="footer_calc">All Calculators</a>
+        <a href="articles.html" data-translate="footer_articles">Learning Articles</a>
+        <a href="about.html" data-translate="footer_about">About</a>
+        <a href="privacy.html" data-translate="footer_privacy">Privacy Policy</a>
+        <a href="terms.html" data-translate="footer_terms">Terms of Service</a>
+        <a href="contact.html" data-translate="footer_contact">Contact</a>
+      </div>
+      <div class="footer-text" data-translate="footer_disclaimer">
+        Educational calculators for fleet management. Verify with qualified consultants for business-critical decisions.
+      </div>
+      <div class="footer-text">
+        Email: <a href="mailto:fleetguideprivacy@gmail.com" style="color: #004E89;">fleetguideprivacy@gmail.com</a>
+      </div>
+      <div class="copyright">
+        © 2026 FleetGuide
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/calculators.js"></script>
+  <script src="js/converters.js"></script>
+  <script src="js/translations.js"></script>
+</body>
+</html>
