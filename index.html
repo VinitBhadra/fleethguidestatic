@@ -43,6 +43,30 @@
     @media (max-width: 600px) {
       .calc-grid-4 { grid-template-columns: 1fr; }
     }
+    /* Featured article box */
+    .featured-box {
+      background: linear-gradient(135deg, #FF6B35 0%, #FF8555 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-decoration: none;
+      display: block;
+      transition: all 0.3s;
+    }
+    .featured-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+    }
+    .featured-box h3 {
+      color: white;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .featured-box p {
+      color: rgba(255,255,255,0.95);
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -69,6 +93,7 @@
         <a href="index.html" class="logo">FleetGuide</a>
         <ul class="nav-links">
           <li><a href="index.html" data-translate="nav_home">Home</a></li>
+          <li><a href="telematics-platforms.html" style=font-weight: 600;">Telematics Platforms</a></li>
           <li><a href="articles.html" data-translate="nav_articles">Learning Articles</a></li>
           <li><a href="calculators.html" data-translate="nav_calculators">All Calculators</a></li>
           <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
@@ -307,10 +332,24 @@
       </div>
     </section>
 
-    <!-- Learning Resources -->
+    <!-- Learning Resources with Featured Telematics -->
     <section class="section" style="padding: 40px 0; background: #f8f9fa;">
       <div class="container">
         <h2 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;" data-translate="section_learning">Learning Resources</h2>
+        
+        <!-- Featured: Telematics Platforms -->
+        <a href="telematics-platforms.html" class="featured-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div style="flex: 1;">
+              <h3>🔥 Popular: Best Telematics Platforms Comparison 2026</h3>
+              <p>Compare 8 leading GPS tracking systems with pricing, features, and reviews. Find the perfect telematics solution for your fleet.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 6px; font-weight: 700;">
+              Read Now →
+            </div>
+          </div>
+        </a>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 20px;">
           <a href="articles/what-is-fleet-management.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">What is Fleet Management</a>
           <a href="articles/how-to-calculate-fuel-cost.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">How to Calculate Fuel Cost</a>
@@ -328,6 +367,7 @@
   <footer style="margin-top: 50px;">
     <div class="container">
       <div class="footer-links">
+        <a href="telematics-platforms.html" style="color: #FF6B35; font-weight: 600;">Telematics Platforms</a>
         <a href="calculators.html" data-translate="footer_calc">All Calculators</a>
         <a href="articles.html" data-translate="footer_articles">Learning Articles</a>
         <a href="about.html" data-translate="footer_about">About</a>
