@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fleet Management Calculators for India | FleetGuide.in</title>
+  <meta name="description" content="Free educational fleet management calculators for Indian truck owners and transport businesses. Calculate fuel costs, trip expenses, and optimize fleet operations.">
+  <meta name="keywords" content="fleet calculator india, fuel cost calculator, truck calculator, transport calculator">
+  <link rel="canonical" href="https://fleetguide.in/">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">FleetGuide.in</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="articles.html">Learning Articles</a></li>
+          <li><a href="calculators.html">All Calculators</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Fleet Management Calculators for Trucks & Transport</h1>
+        <p>Educational calculators designed for truck owners, fleet managers, and transport businesses in India. Learn to calculate fuel costs, optimize routes, and improve operational efficiency.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Learning & Guides</h2>
+        <a href="articles/what-is-fleet-management.html" class="article-card">What is Fleet Management and Why It Matters</a>
+        <a href="articles/how-to-calculate-fuel-cost.html" class="article-card">How to Calculate Fuel Cost for Your Truck</a>
+        <a href="articles/understanding-gps-tracking.html" class="article-card">Understanding GPS Tracking for Fleets</a>
+        <div style="margin-top: 20px;">
+          <a href="articles.html" style="color: #FF6B35; font-weight: 600; text-decoration: none;">View All 25 Articles →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Quick Calculators</h2>
+        <div class="calc-grid">
+          
+          <div class="calc-card">
+            <h3>Fuel Cost Calculator</h3>
+            <p>Calculate fuel expenses based on distance, price, and mileage</p>
+            <input type="number" id="fuel-distance" placeholder="Distance (km)" min="0">
+            <input type="number" id="fuel-price" placeholder="Fuel Price (₹/L)" min="0">
+            <input type="number" id="fuel-mileage" placeholder="Mileage (km/L)" min="0">
+            <div id="fuel-result" class="result"></div>
+          </div>
+
+          <div class="calc-card">
+            <h3>Trip Cost Calculator</h3>
+            <p>Calculate total trip cost including fuel, driver, and tolls</p>
+            <input type="number" id="trip-distance" placeholder="Distance (km)" min="0">
+            <input type="number" id="trip-price" placeholder="Fuel Price (₹/L)" min="0">
+            <input type="number" id="trip-mileage" placeholder="Mileage (km/L)" min="0">
+            <input type="number" id="trip-driver" placeholder="Driver Cost (₹)" min="0">
+            <input type="number" id="trip-toll" placeholder="Toll (₹)" min="0">
+            <div id="trip-result" class="result"></div>
+          </div>
+
+          <div class="calc-card">
+            <h3>Cost Per KM</h3>
+            <p>Calculate operational efficiency per kilometer</p>
+            <input type="number" id="cpk-total" placeholder="Total Cost (₹)" min="0">
+            <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0">
+            <div id="cpk-result" class="result"></div>
+          </div>
+
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="calculators.html" class="btn">View All Calculators</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>About Our Calculators</h2>
+        <div class="content-box">
+          <p>FleetGuide provides educational fleet management calculators to help transport businesses in India improve efficiency and reduce costs.</p>
+          <p>Whether you need to calculate fuel expenses, estimate trip costs, or analyze operational efficiency, our tools are designed for practical, real-world use by truck owners and fleet managers across India.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="calculators.html">All Calculators</a>
+        <a href="articles.html">Learning Articles</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-text">
+        Educational calculators for fleet management. Verify with qualified consultants for business-critical decisions.
+      </div>
+      <div class="footer-text">
+        Email: <a href="mailto:fleetguideprivacy@gmail.com" style="color: #004E89;">fleetguideprivacy@gmail.com</a>
+      </div>
+      <div class="copyright">
+        © 2026 FleetGuide.in
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

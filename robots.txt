@@ -1,0 +1,10 @@
+# FleetGuide.in - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://fleetguide.in/sitemap.xml
+
+# Crawl-delay to be respectful to search engines
+Crawl-delay: 1
