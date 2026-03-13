@@ -67,10 +67,65 @@
       color: rgba(255,255,255,0.95);
       margin: 0;
     }
+    /* Cookie Consent Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      z-index: 1000;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+      display: none;
+    }
+    .cookie-banner.show {
+      display: block;
+    }
+    .cookie-banner-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cookie-banner button {
+      background: #FF6B35;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .cookie-banner button:hover {
+      background: #e55a2b;
+    }
+    @media (max-width: 768px) {
+      .cookie-banner-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
   
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-content">
+      <div style="flex: 1;">
+        <strong>🍪 We use cookies</strong><br>
+        This website uses cookies to improve your experience and for analytics. By continuing to use this site, you agree to our <a href="privacy.html" style="color: #FF6B35; text-decoration: underline;">Privacy Policy</a>.
+      </div>
+      <button onclick="acceptCookies()">Accept & Continue</button>
+    </div>
+  </div>
+
   <!-- Language Selector -->
   <div class="lang-selector">
     <select id="language-select" onchange="changeLanguage(this.value)">
@@ -126,8 +181,33 @@
       </div>
     </section>
 
+    <!-- SEO Content Section - What is Fleet Management -->
+    <section class="section" style="padding: 40px 0; background: white;">
+      <div class="container" style="max-width: 900px;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;">What is Fleet Management?</h2>
+        
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Fleet management is the comprehensive process of overseeing and coordinating commercial vehicles to maximize efficiency, reduce costs, and improve safety. Whether you operate trucks, buses, delivery vans, or any commercial vehicle fleet, effective fleet management directly impacts your profitability and operational success.</p>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Modern fleet management encompasses several critical areas including vehicle tracking and monitoring, route optimization and planning, fuel consumption management, maintenance scheduling and management, driver behavior analysis and safety, compliance with regulatory requirements, and cost analysis and reporting. Each of these components plays a vital role in running an efficient, profitable fleet operation.</p>
+
+        <h3 style="font-size: 1.3rem; margin: 25px 0 15px; color: #004E89;">How Our Fleet Calculators Help Your Business</h3>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">FleetGuide provides free, professional-grade calculators designed specifically for transport businesses worldwide. Our tools help you estimate trip costs accurately, calculate fuel usage and expenses, determine cost per kilometer for pricing decisions, optimize vehicle loading and capacity, plan efficient multi-stop routes, calculate break-even points for profitability, track maintenance costs over time, and convert units between different measurement systems.</p>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Whether you're running a small delivery business with 5 vehicles or managing a large logistics operation with hundreds of trucks, our calculators provide instant, accurate results to support better decision-making. All calculations are performed in your browser, ensuring your business data remains private and secure.</p>
+
+        <h3 style="font-size: 1.3rem; margin: 25px 0 15px; color: #004E89;">Why Fleet Cost Management Matters</h3>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">For most fleet operations, fuel represents 30-40% of total operating costs. Maintenance adds another 10-15%, while driver wages, insurance, and vehicle depreciation consume the remainder. Without proper tracking and analysis, hidden costs can erode profitability. Fleet owners who actively monitor and optimize their operations typically achieve 15-25% cost reductions in the first year alone.</p>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Our calculators help you identify cost-saving opportunities by providing clear visibility into per-kilometer costs, fuel efficiency patterns, optimal load configurations, route efficiency metrics, and maintenance expense trends. This data-driven approach enables you to make informed decisions about pricing, route planning, vehicle replacement, and operational improvements.</p>
+
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Start using our free fleet management calculators today to optimize your operations, reduce costs, and improve profitability. All tools are available in 10 languages and work on any device. No registration required – simply enter your data and get instant results.</p>
+      </div>
+    </section>
+
     <!-- Fleet Calculators -->
-    <section class="section" style="padding: 40px 0;">
+    <section class="section" style="padding: 40px 0; background: #f8f9fa;">
       <div class="container">
         <h2 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center;" data-translate="section_fleet">Fleet Management Calculators</h2>
         
@@ -213,7 +293,7 @@
     </section>
 
     <!-- Unit & Currency Converters -->
-    <section class="section" style="padding: 40px 0; background: #f8f9fa;">
+    <section class="section" style="padding: 40px 0; background: white;">
       <div class="container">
         <h2 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center;" data-translate="section_converters">Unit & Currency Converters</h2>
         
@@ -304,7 +384,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="section" style="padding: 40px 0;">
+    <section class="section" style="padding: 40px 0; background: #f8f9fa;">
       <div class="container">
         <h2 style="font-size: 1.8rem; margin-bottom: 30px; text-align: center;" data-translate="section_features">Why Choose FleetGuide</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
@@ -333,7 +413,7 @@
     </section>
 
     <!-- Learning Resources with Featured Telematics -->
-    <section class="section" style="padding: 40px 0; background: #f8f9fa;">
+    <section class="section" style="padding: 40px 0; background: white;">
       <div class="container">
         <h2 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;" data-translate="section_learning">Learning Resources</h2>
         
@@ -342,7 +422,7 @@
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
             <div style="flex: 1;">
               <h3>🔥 Popular: Best Telematics Platforms Comparison 2026</h3>
-              <p>Compare 8 leading GPS tracking systems with pricing, features, and reviews. Find the perfect telematics solution for your fleet.</p>
+              <p>Compare 12 leading GPS tracking systems with pricing, features, and reviews. Find the perfect telematics solution for your fleet.</p>
             </div>
             <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 6px; font-weight: 700;">
               Read Now →
@@ -351,13 +431,13 @@
         </a>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 20px;">
-          <a href="articles/what-is-fleet-management.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">What is Fleet Management</a>
-          <a href="articles/how-to-calculate-fuel-cost.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">How to Calculate Fuel Cost</a>
-          <a href="articles/how-to-reduce-fuel-costs.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">Reduce Fuel Costs</a>
-          <a href="articles/understanding-gps-tracking.html" style="display: block; padding: 15px; background: white; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">GPS Tracking Guide</a>
+          <a href="articles/what-is-fleet-management.html" style="display: block; padding: 15px; background: #f8f9fa; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">What is Fleet Management</a>
+          <a href="articles/best-gps-tracking-devices-india-2026.html" style="display: block; padding: 15px; background: #f8f9fa; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">Best GPS Tracking Devices 2026</a>
+          <a href="articles/how-to-calculate-fuel-cost.html" style="display: block; padding: 15px; background: #f8f9fa; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">How to Calculate Fuel Cost</a>
+          <a href="articles/how-to-reduce-fuel-costs.html" style="display: block; padding: 15px; background: #f8f9fa; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">Reduce Fuel Costs</a>
         </div>
         <div style="text-align: center;">
-          <a href="articles.html" class="btn" data-translate="btn_all_articles">View All 25 Articles</a>
+          <a href="articles.html" class="btn" data-translate="btn_all_articles">View All Articles</a>
         </div>
       </div>
     </section>
@@ -391,5 +471,21 @@
   <script src="js/calculators.js"></script>
   <script src="js/converters.js"></script>
   <script src="js/translations.js"></script>
+  
+  <script>
+    // Cookie Consent Banner Logic
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+
+    // Check if user has already accepted cookies
+    window.addEventListener('DOMContentLoaded', function() {
+      const cookieConsent = localStorage.getItem('cookieConsent');
+      if (!cookieConsent) {
+        document.getElementById('cookieBanner').classList.add('show');
+      }
+    });
+  </script>
 </body>
 </html>
