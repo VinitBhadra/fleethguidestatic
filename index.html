@@ -3,13 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fleet Management Calculators & Tools | FleetGuide</title>
-  <meta name="description" content="Free fleet management calculators, unit converters, and educational resources for truck owners and transport businesses worldwide. Multi-language support available.">
-  <meta name="keywords" content="fleet calculator, fuel cost calculator, truck calculator, transport calculator, unit converter, currency converter">
+  <title>Smart Fleet Management Tools & Cost Calculators | FleetGuide</title>
+  <meta name="description" content="Professional fleet management calculators and expert guides for transport businesses. Reduce fuel costs, optimize routes, and improve fleet efficiency with data-driven tools.">
+  <meta name="keywords" content="fleet management, fuel cost calculator, fleet calculator, transport business, GPS tracking, fleet optimization">
   <link rel="canonical" href="https://fleetguide.in/">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Multi-language selector */
+    /* Enhanced Typography */
+    h1 { font-size: 2.8rem; line-height: 1.2; }
+    h2 { font-size: 2rem; margin-bottom: 30px; }
+    h3 { font-size: 1.3rem; }
+    
+    /* Better Spacing */
+    .section { padding: 60px 0; }
+    .section + .section { margin-top: 0; }
+    
+    /* Language Selector */
     .lang-selector {
       position: fixed;
       top: 80px;
@@ -27,47 +36,346 @@
       font-size: 0.9rem;
       cursor: pointer;
     }
-    /* 4-column grid for calculators */
-    .calc-grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-    @media (max-width: 1200px) {
-      .calc-grid-4 { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 900px) {
-      .calc-grid-4 { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .calc-grid-4 { grid-template-columns: 1fr; }
-    }
-    /* Featured article box */
-    .featured-box {
-      background: linear-gradient(135deg, #FF6B35 0%, #FF8555 100%);
+    
+    /* Enhanced Hero Section */
+    .hero-enhanced {
+      background: linear-gradient(135deg, #004E89 0%, #006BB3 100%);
       color: white;
-      padding: 25px;
-      border-radius: 8px;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .hero-enhanced h1 {
+      font-size: 2.8rem;
       margin-bottom: 20px;
+      color: white;
+      font-weight: 700;
+    }
+    .hero-enhanced .subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+    .hero-benefits {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .hero-benefit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+    }
+    .hero-benefit svg {
+      width: 24px;
+      height: 24px;
+      fill: #90ee90;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #FF6B35;
+      color: white;
       text-decoration: none;
-      display: block;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 20px;
       transition: all 0.3s;
     }
-    .featured-box:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+    .cta-button:hover {
+      background: #e55a2b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
     }
-    .featured-box h3 {
-      color: white;
+    
+    /* Trust Indicators */
+    .trust-bar {
+      background: white;
+      padding: 30px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      text-align: center;
+    }
+    .trust-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #004E89;
+      display: block;
+    }
+    .trust-label {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    
+    /* Key Benefits Section */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .benefit-card {
+      text-align: center;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    .benefit-icon {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+    .benefit-card h3 {
+      color: #004E89;
       margin-bottom: 10px;
-      font-size: 1.3rem;
     }
-    .featured-box p {
-      color: rgba(255,255,255,0.95);
+    
+    /* Calculator Cards with Context */
+    .calc-card-enhanced {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      transition: all 0.3s;
+    }
+    .calc-card-enhanced:hover {
+      border-color: #FF6B35;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
+    }
+    .calc-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .calc-icon {
+      font-size: 2rem;
+    }
+    .calc-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #004E89;
       margin: 0;
     }
-    /* Cookie Consent Banner */
+    .calc-description {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .calc-example {
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 15px;
+      border-left: 3px solid #FF6B35;
+    }
+    .related-article {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .related-article a {
+      color: #004E89;
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .related-article a:hover {
+      color: #FF6B35;
+    }
+    
+    /* Featured Articles Section */
+    .featured-articles {
+      background: #f8f9fa;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .article-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    .article-image {
+      background: linear-gradient(135deg, #004E89 0%, #006BB3 100%);
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+    .article-content {
+      padding: 20px;
+    }
+    .article-card h3 {
+      color: #004E89;
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+    .article-card p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .article-meta {
+      color: #999;
+      font-size: 0.8rem;
+    }
+    
+    /* Why Choose Us Section */
+    .why-choose {
+      background: white;
+    }
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .feature-item {
+      display: flex;
+      gap: 15px;
+      align-items: start;
+    }
+    .feature-item-icon {
+      font-size: 2rem;
+      color: #FF6B35;
+    }
+    .feature-item h3 {
+      color: #004E89;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .feature-item p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    /* Newsletter/CTA Section */
+    .newsletter-section {
+      background: linear-gradient(135deg, #FF6B35 0%, #FF8555 100%);
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+    .newsletter-section h2 {
+      color: white;
+      margin-bottom: 15px;
+    }
+    .newsletter-section p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      opacity: 0.95;
+    }
+    .newsletter-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .newsletter-form button {
+      padding: 14px 30px;
+      background: #004E89;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .newsletter-form button:hover {
+      background: #003a6b;
+    }
+    
+    /* Enhanced Footer */
+    .footer-enhanced {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 50px 0 20px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-about h3 {
+      color: white;
+      margin-bottom: 15px;
+    }
+    .footer-about p {
+      line-height: 1.8;
+      color: #aaa;
+    }
+    .footer-links h4 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: #FF6B35;
+    }
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      text-align: center;
+      color: #888;
+    }
+    
+    /* Cookie Banner */
     .cookie-banner {
       position: fixed;
       bottom: 0;
@@ -105,11 +413,14 @@
     .cookie-banner button:hover {
       background: #e55a2b;
     }
+    
+    /* Responsive */
     @media (max-width: 768px) {
-      .cookie-banner-content {
-        flex-direction: column;
-        text-align: center;
-      }
+      .hero-enhanced h1 { font-size: 2rem; }
+      .hero-benefits { flex-direction: column; gap: 15px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .newsletter-form { flex-direction: column; }
+      h2 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -120,7 +431,7 @@
     <div class="cookie-banner-content">
       <div style="flex: 1;">
         <strong>🍪 We use cookies</strong><br>
-        This website uses cookies to improve your experience and for analytics. By continuing to use this site, you agree to our <a href="privacy.html" style="color: #FF6B35; text-decoration: underline;">Privacy Policy</a>.
+        This website uses cookies to improve your experience. By continuing, you agree to our <a href="privacy.html" style="color: #FF6B35; text-decoration: underline;">Privacy Policy</a>.
       </div>
       <button onclick="acceptCookies()">Accept & Continue</button>
     </div>
@@ -147,11 +458,11 @@
       <nav>
         <a href="index.html" class="logo">FleetGuide</a>
         <ul class="nav-links">
-          <li><a href="index.html" data-translate="nav_home">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="telematics-platforms.html" style="color: #FF6B35; font-weight: 600;">Telematics Platforms</a></li>
-          <li><a href="articles.html" data-translate="nav_articles">Learning Articles</a></li>
-          <li><a href="calculators.html" data-translate="nav_calculators">All Calculators</a></li>
-          <li><a href="contact.html" data-translate="nav_contact">Contact</a></li>
+          <li><a href="articles.html">Learning Articles</a></li>
+          <li><a href="calculators.html">All Calculators</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
       </nav>
@@ -159,310 +470,453 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero" style="padding: 50px 0 40px; background: linear-gradient(135deg, #004E89 0%, #006BB3 100%); color: white;">
+    
+    <!-- 1. ENHANCED HERO SECTION -->
+    <section class="hero-enhanced">
       <div class="container">
-        <h1 style="font-size: 2.5rem; margin-bottom: 20px; color: white;" data-translate="hero_title">Professional Fleet Management Calculators & Tools</h1>
-        <p style="font-size: 1.15rem; margin-bottom: 25px; opacity: 0.95;" data-translate="hero_subtitle">Free calculators, unit converters, and educational resources for transport businesses worldwide</p>
-        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-          <div style="background: rgba(255,255,255,0.2); padding: 15px 20px; border-radius: 8px;">
-            <div style="font-size: 1.8rem; font-weight: 700;">12+</div>
-            <div style="font-size: 0.9rem;" data-translate="hero_calculators">Calculators</div>
+        <h1>Smart Fleet Management Tools & Cost Calculators for Transport Businesses</h1>
+        <p class="subtitle">Professional-grade tools and expert guides to reduce costs, optimize operations, and improve fleet efficiency</p>
+        
+        <div class="hero-benefits">
+          <div class="hero-benefit">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span>100% Free Tools</span>
           </div>
-          <div style="background: rgba(255,255,255,0.2); padding: 15px 20px; border-radius: 8px;">
-            <div style="font-size: 1.8rem; font-weight: 700;">25+</div>
-            <div style="font-size: 0.9rem;" data-translate="hero_articles">Articles</div>
+          <div class="hero-benefit">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span>Expert Guides & Analysis</span>
           </div>
-          <div style="background: rgba(255,255,255,0.2); padding: 15px 20px; border-radius: 8px;">
-            <div style="font-size: 1.8rem; font-weight: 700;">10+</div>
-            <div style="font-size: 0.9rem;" data-translate="hero_languages">Languages</div>
+          <div class="hero-benefit">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span>Data-Driven Insights</span>
           </div>
+        </div>
+        
+        <a href="#calculators" class="cta-button">Explore Tools →</a>
+      </div>
+    </section>
+
+    <!-- 2. TRUST INDICATORS -->
+    <section class="trust-bar">
+      <div class="container">
+        <div class="trust-items">
+          <div class="trust-item">
+            <span class="trust-number">500+</span>
+            <span class="trust-label">Fleet Operators</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">20</span>
+            <span class="trust-label">Professional Tools</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">35+</span>
+            <span class="trust-label">Expert Guides</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">10</span>
+            <span class="trust-label">Languages</span>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; color: #666; font-size: 0.95rem;">
+          <strong>Built by Fleet & GPS Experts</strong> | Trusted by Transport Businesses Worldwide
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. KEY BENEFITS -->
+    <section class="section" style="background: #f8f9fa;">
+      <div class="container">
+        <h2 style="text-align: center;">Why Fleet Managers Choose FleetGuide</h2>
+        <div class="benefits-grid">
+          
+          <div class="benefit-card">
+            <div class="benefit-icon">💰</div>
+            <h3>Reduce Operating Costs</h3>
+            <p>Calculate and track fuel costs, maintenance expenses, and total cost of ownership with precision. Identify savings opportunities worth thousands per vehicle annually.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">📊</div>
+            <h3>Data-Driven Decisions</h3>
+            <p>Make informed choices with real industry data, trend analysis, and cost comparisons. Access charts and statistics from actual fleet operations.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">⚡</div>
+            <h3>Instant Results</h3>
+            <p>All calculations happen instantly in your browser. No waiting, no accounts, no complexity. Just enter your data and get immediate, actionable insights.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🎓</div>
+            <h3>Expert Knowledge</h3>
+            <p>Learn from in-depth guides written by fleet technology analysts with 15+ years experience in GPS tracking, telematics, and fleet optimization.</p>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- SEO Content Section - What is Fleet Management -->
-    <section class="section" style="padding: 40px 0; background: white;">
-      <div class="container" style="max-width: 900px;">
-        <h2 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;">What is Fleet Management?</h2>
-        
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Fleet management is the comprehensive process of overseeing and coordinating commercial vehicles to maximize efficiency, reduce costs, and improve safety. Whether you operate trucks, buses, delivery vans, or any commercial vehicle fleet, effective fleet management directly impacts your profitability and operational success.</p>
-
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Modern fleet management encompasses several critical areas including vehicle tracking and monitoring, route optimization and planning, fuel consumption management, maintenance scheduling and management, driver behavior analysis and safety, compliance with regulatory requirements, and cost analysis and reporting. Each of these components plays a vital role in running an efficient, profitable fleet operation.</p>
-
-        <h3 style="font-size: 1.3rem; margin: 25px 0 15px; color: #004E89;">How Our Fleet Calculators Help Your Business</h3>
-
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">FleetGuide provides free, professional-grade calculators designed specifically for transport businesses worldwide. Our tools help you estimate trip costs accurately, calculate fuel usage and expenses, determine cost per kilometer for pricing decisions, optimize vehicle loading and capacity, plan efficient multi-stop routes, calculate break-even points for profitability, track maintenance costs over time, and convert units between different measurement systems.</p>
-
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Whether you're running a small delivery business with 5 vehicles or managing a large logistics operation with hundreds of trucks, our calculators provide instant, accurate results to support better decision-making. All calculations are performed in your browser, ensuring your business data remains private and secure.</p>
-
-        <h3 style="font-size: 1.3rem; margin: 25px 0 15px; color: #004E89;">Why Fleet Cost Management Matters</h3>
-
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">For most fleet operations, fuel represents 30-40% of total operating costs. Maintenance adds another 10-15%, while driver wages, insurance, and vehicle depreciation consume the remainder. Without proper tracking and analysis, hidden costs can erode profitability. Fleet owners who actively monitor and optimize their operations typically achieve 15-25% cost reductions in the first year alone.</p>
-
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Our calculators help you identify cost-saving opportunities by providing clear visibility into per-kilometer costs, fuel efficiency patterns, optimal load configurations, route efficiency metrics, and maintenance expense trends. This data-driven approach enables you to make informed decisions about pricing, route planning, vehicle replacement, and operational improvements.</p>
-
-        <p style="font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 20px;">Start using our free fleet management calculators today to optimize your operations, reduce costs, and improve profitability. All tools are available in 10 languages and work on any device. No registration required – simply enter your data and get instant results.</p>
-      </div>
-    </section>
-
-    <!-- Fleet Calculators -->
-    <section class="section" style="padding: 40px 0; background: #f8f9fa;">
+    <!-- 4. FLEET CALCULATORS WITH CONTEXT -->
+    <section class="section" id="calculators" style="background: white;">
       <div class="container">
-        <h2 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center;" data-translate="section_fleet">Fleet Management Calculators</h2>
+        <h2 style="text-align: center;">Fleet Management Calculators</h2>
+        <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 40px;">Professional tools to estimate costs, plan routes, and optimize your fleet operations</p>
         
         <div class="calc-grid-4">
           
-          <!-- 1. Fuel Cost -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">⛽ <span data-translate="calc_fuel">Fuel Cost</span></h3>
-            <input type="number" id="fuel-distance" placeholder="Distance (km)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="fuel-price" placeholder="Fuel Price" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="fuel-mileage" placeholder="Mileage (km/L)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <div id="fuel-result" class="result" style="font-size: 0.85rem;"></div>
+          <!-- Fuel Cost Calculator -->
+          <div class="calc-card-enhanced">
+            <div class="calc-header">
+              <span class="calc-icon">⛽</span>
+              <h3 class="calc-title">Fuel Cost</h3>
+            </div>
+            <p class="calc-description">Calculate total fuel expenses based on distance, fuel price, and vehicle efficiency.</p>
+            <div class="calc-example">💡 Example: 500 km trip at $4.10/gal, 8 km/L = $127 fuel cost</div>
+            
+            <input type="number" id="fuel-distance" placeholder="Distance (km)" min="0">
+            <input type="number" id="fuel-price" placeholder="Fuel Price/L" min="0" step="0.01">
+            <input type="number" id="fuel-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+            <div id="fuel-result" class="result"></div>
+            
+            <div class="related-article">
+              <a href="articles/how-to-calculate-fuel-cost.html">
+                📖 Related Guide: How to Calculate Fuel Cost →
+              </a>
+            </div>
           </div>
 
-          <!-- 2. Trip Cost -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🚛 <span data-translate="calc_trip">Trip Cost</span></h3>
-            <input type="number" id="trip-distance" placeholder="Distance" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="trip-price" placeholder="Fuel Price" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="trip-mileage" placeholder="Mileage" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="trip-driver" placeholder="Driver Cost" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="trip-toll" placeholder="Toll" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <div id="trip-result" class="result" style="font-size: 0.85rem;"></div>
+          <!-- Trip Cost Calculator -->
+          <div class="calc-card-enhanced">
+            <div class="calc-header">
+              <span class="calc-icon">🚛</span>
+              <h3 class="calc-title">Trip Cost</h3>
+            </div>
+            <p class="calc-description">Calculate complete trip expenses including fuel, driver, and toll costs.</p>
+            <div class="calc-example">💡 Example: Get total cost breakdown for any delivery or transport job</div>
+            
+            <input type="number" id="trip-distance" placeholder="Distance (km)" min="0">
+            <input type="number" id="trip-price" placeholder="Fuel Price/L" min="0" step="0.01">
+            <input type="number" id="trip-mileage" placeholder="Mileage (km/L)" min="0" step="0.1">
+            <input type="number" id="trip-driver" placeholder="Driver Cost" min="0">
+            <input type="number" id="trip-toll" placeholder="Toll Cost" min="0">
+            <div id="trip-result" class="result"></div>
+            
+            <div class="related-article">
+              <a href="articles/how-to-calculate-trip-profitability.html">
+                📖 Related Guide: Calculate Trip Profitability →
+              </a>
+            </div>
           </div>
 
-          <!-- 3. Cost Per KM -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">📊 <span data-translate="calc_cpk">Cost/KM</span></h3>
-            <input type="number" id="cpk-total" placeholder="Total Cost" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="cpk-distance" placeholder="Distance" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <div id="cpk-result" class="result" style="font-size: 0.85rem;"></div>
+          <!-- Cost Per KM -->
+          <div class="calc-card-enhanced">
+            <div class="calc-header">
+              <span class="calc-icon">📊</span>
+              <h3 class="calc-title">Cost/KM</h3>
+            </div>
+            <p class="calc-description">Determine your operating cost per kilometer for accurate pricing and budgeting.</p>
+            <div class="calc-example">💡 Example: $500 total cost ÷ 250 km = $2.00 per km</div>
+            
+            <input type="number" id="cpk-total" placeholder="Total Cost" min="0">
+            <input type="number" id="cpk-distance" placeholder="Distance (km)" min="0">
+            <div id="cpk-result" class="result"></div>
+            
+            <div class="related-article">
+              <a href="articles/what-is-cost-per-kilometer.html">
+                📖 Related Guide: Understanding Cost Per KM →
+              </a>
+            </div>
           </div>
 
-          <!-- 4. Distance -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">📍 <span data-translate="calc_distance">Distance</span></h3>
-            <input type="number" id="dist-lat1" placeholder="Start Lat" step="0.000001" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="dist-lon1" placeholder="Start Lon" step="0.000001" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="dist-lat2" placeholder="End Lat" step="0.000001" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="dist-lon2" placeholder="End Lon" step="0.000001" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <div id="dist-result" class="result" style="font-size: 0.85rem;"></div>
+          <!-- Distance Calculator -->
+          <div class="calc-card-enhanced">
+            <div class="calc-header">
+              <span class="calc-icon">📍</span>
+              <h3 class="calc-title">Distance</h3>
+            </div>
+            <p class="calc-description">Calculate precise distance between two GPS coordinates using Haversine formula.</p>
+            <div class="calc-example">💡 Example: Get accurate km between pickup and delivery points</div>
+            
+            <input type="number" id="dist-lat1" placeholder="Start Latitude" step="0.000001">
+            <input type="number" id="dist-lon1" placeholder="Start Longitude" step="0.000001">
+            <input type="number" id="dist-lat2" placeholder="End Latitude" step="0.000001">
+            <input type="number" id="dist-lon2" placeholder="End Longitude" step="0.000001">
+            <div id="dist-result" class="result"></div>
+            
+            <div class="related-article">
+              <a href="articles/understanding-gps-tracking.html">
+                📖 Related Guide: GPS Tracking Basics →
+              </a>
+            </div>
           </div>
 
-          <!-- 5. Route Optimizer -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🗺️ <span data-translate="calc_route">Route</span></h3>
-            <input type="number" id="route-stops" placeholder="Stops" min="2" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="route-dist" placeholder="Total KM" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="route-fuel" placeholder="Cost/KM" min="0" step="0.1" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <div id="route-result" class="result" style="font-size: 0.85rem;"></div>
+          <!-- Route Optimizer -->
+          <div class="calc-card-enhanced">
+            <div class="calc-header">
+              <span class="calc-icon">🗺️</span>
+              <h3 class="calc-title">Route Optimizer</h3>
+            </div>
+            <p class="calc-description">Optimize multi-stop routes to minimize distance and reduce fuel costs.</p>
+            <div class="calc-example">💡 Example: 5 stops, 200 km total at $2/km = $400 route cost</div>
+            
+            <input type="number" id="route-stops" placeholder="Number of Stops" min="2">
+            <input type="number" id="route-dist" placeholder="Total KM" min="0">
+            <input type="number" id="route-fuel" placeholder="Cost/KM" min="0" step="0.01">
+            <div id="route-result" class="result"></div>
+            
+            <div class="related-article">
+              <a href="articles/what-is-route-optimization.html">
+                📖 Related Guide: Route Optimization Tips →
+              </a>
+            </div>
           </div>
 
-          <!-- 6. Load Optimizer -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">📦 <span data-translate="calc_load">Load</span></h3>
-            <input type="number" id="load-capacity" placeholder="Capacity (kg)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="load-current" placeholder="Current (kg)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="load-items" placeholder="Item (kg)" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <div id="load-result" class="result" style="font-size: 0.85rem;"></div>
+          <!-- Load Optimizer -->
+          <div class="calc-card-enhanced">
+            <div class="calc-header">
+              <span class="calc-icon">📦</span>
+              <h3 class="calc-title">Load Optimizer</h3>
+            </div>
+            <p class="calc-description">Calculate optimal loading to maximize vehicle capacity and minimize trips.</p>
+            <div class="calc-example">💡 Example: 5000 kg capacity, 3500 kg loaded, adding 800 kg items</div>
+            
+            <input type="number" id="load-capacity" placeholder="Capacity (kg)" min="0">
+            <input type="number" id="load-current" placeholder="Current Load (kg)" min="0">
+            <input type="number" id="load-items" placeholder="Item Weight (kg)" min="0">
+            <div id="load-result" class="result"></div>
+            
+            <div class="related-article">
+              <a href="articles/understanding-payload-capacity.html">
+                📖 Related Guide: Payload Capacity Guide →
+              </a>
+            </div>
           </div>
 
-          <!-- 7. Break-Even -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">💰 <span data-translate="calc_breakeven">Break-Even</span></h3>
-            <input type="number" id="be-fixed" placeholder="Fixed Cost" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="be-variable" placeholder="Variable/Trip" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="be-revenue" placeholder="Revenue/Trip" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <div id="be-result" class="result" style="font-size: 0.85rem;"></div>
+          <!-- Break-Even -->
+          <div class="calc-card-enhanced">
+            <div class="calc-header">
+              <span class="calc-icon">💰</span>
+              <h3 class="calc-title">Break-Even</h3>
+            </div>
+            <p class="calc-description">Calculate how many trips needed to cover fixed costs and start generating profit.</p>
+            <div class="calc-example">💡 Example: $10,000 fixed cost, $200/trip variable, $350/trip revenue</div>
+            
+            <input type="number" id="be-fixed" placeholder="Fixed Costs" min="0">
+            <input type="number" id="be-variable" placeholder="Variable Cost/Trip" min="0">
+            <input type="number" id="be-revenue" placeholder="Revenue/Trip" min="0">
+            <div id="be-result" class="result"></div>
+            
+            <div class="related-article">
+              <a href="articles/how-to-calculate-breakeven.html">
+                📖 Related Guide: Break-Even Analysis →
+              </a>
+            </div>
           </div>
 
-          <!-- 8. Maintenance -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🔧 <span data-translate="calc_maint">Maintenance</span></h3>
-            <input type="number" id="maint-oil" placeholder="Oil" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="maint-tire" placeholder="Tires" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="maint-service" placeholder="Service" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <input type="number" id="maint-other" placeholder="Other" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <div id="maint-result" class="result" style="font-size: 0.85rem;"></div>
+          <!-- Maintenance -->
+          <div class="calc-card-enhanced">
+            <div class="calc-header">
+              <span class="calc-icon">🔧</span>
+              <h3 class="calc-title">Maintenance</h3>
+            </div>
+            <p class="calc-description">Track and calculate total vehicle maintenance expenses across all categories.</p>
+            <div class="calc-example">💡 Example: Oil $80, Tires $400, Service $250, Other $150</div>
+            
+            <input type="number" id="maint-oil" placeholder="Oil Change" min="0">
+            <input type="number" id="maint-tire" placeholder="Tires" min="0">
+            <input type="number" id="maint-service" placeholder="Service" min="0">
+            <input type="number" id="maint-other" placeholder="Other" min="0">
+            <div id="maint-result" class="result"></div>
+            
+            <div class="related-article">
+              <a href="articles/understanding-maintenance-costs.html">
+                📖 Related Guide: Maintenance Cost Guide →
+              </a>
+            </div>
           </div>
 
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="calculators.html" class="btn" style="display: inline-block; padding: 14px 35px; background: #FF6B35; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">View All 20 Calculators →</a>
         </div>
       </div>
     </section>
 
-    <!-- Unit & Currency Converters -->
-    <section class="section" style="padding: 40px 0; background: white;">
+    <!-- 5. FEATURED ARTICLES (Content Layer) -->
+    <section class="section featured-articles">
       <div class="container">
-        <h2 style="font-size: 1.8rem; margin-bottom: 25px; text-align: center;" data-translate="section_converters">Unit & Currency Converters</h2>
+        <h2 style="text-align: center;">Learn About Fleet Optimization</h2>
+        <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 30px;">Expert guides and industry analysis to help you reduce costs and improve operations</p>
         
-        <div class="calc-grid-4">
+        <div class="article-grid">
           
-          <!-- 9. Distance Converter -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">📏 <span data-translate="conv_distance">Distance</span></h3>
-            <input type="number" id="conv-dist-val" placeholder="Value" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <select id="conv-dist-from" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
-              <option value="km">Kilometers</option>
-              <option value="mi">Miles</option>
-              <option value="m">Meters</option>
-              <option value="ft">Feet</option>
-            </select>
-            <select id="conv-dist-to" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
-              <option value="mi">Miles</option>
-              <option value="km">Kilometers</option>
-              <option value="m">Meters</option>
-              <option value="ft">Feet</option>
-            </select>
-            <div id="conv-dist-result" class="result" style="font-size: 0.85rem;"></div>
+          <a href="articles/global-crude-oil-prices-2024-2026.html" class="article-card">
+            <div class="article-image">📊</div>
+            <div class="article-content">
+              <h3>Crude Oil Price Impact on Fleet Costs</h3>
+              <p>Analysis of 2024-2026 crude oil trends and how price changes affect your bottom line. Includes interactive charts and cost forecasts.</p>
+              <span class="article-meta">📈 Trending | 7 min read</span>
+            </div>
+          </a>
+
+          <a href="articles/ev-vs-diesel-trucks-cost-comparison-2026.html" class="article-card">
+            <div class="article-image">⚡</div>
+            <div class="article-content">
+              <h3>EV vs Diesel Trucks: Complete Cost Analysis</h3>
+              <p>Total cost of ownership comparison with break-even analysis. When do electric trucks make financial sense for your fleet?</p>
+              <span class="article-meta">💡 Popular | 8 min read</span>
+            </div>
+          </a>
+
+          <a href="articles/how-to-reduce-fuel-costs.html" class="article-card">
+            <div class="article-image">⛽</div>
+            <div class="article-content">
+              <h3>10 Proven Ways to Reduce Fuel Costs</h3>
+              <p>Practical strategies fleet operators use to cut fuel expenses by 15-25%. Driver training, route optimization, and vehicle maintenance tips.</p>
+              <span class="article-meta">🎯 Essential | 5 min read</span>
+            </div>
+          </a>
+
+          <a href="telematics-platforms.html" class="article-card">
+            <div class="article-image">📡</div>
+            <div class="article-content">
+              <h3>Best Telematics Platforms 2026</h3>
+              <p>Compare 12 leading GPS tracking systems with pricing, features, and reviews. Find the perfect solution for your fleet size and needs.</p>
+              <span class="article-meta">🔥 Most Viewed | 10 min read</span>
+            </div>
+          </a>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 35px;">
+          <a href="articles.html" class="btn" style="display: inline-block; padding: 14px 35px; background: #004E89; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">View All 35 Articles →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. WHY CHOOSE US (Trust) -->
+    <section class="section why-choose">
+      <div class="container">
+        <h2 style="text-align: center;">Why Trust FleetGuide</h2>
+        <div class="feature-list">
+          
+          <div class="feature-item">
+            <div class="feature-item-icon">👥</div>
+            <div>
+              <h3>Industry Expertise</h3>
+              <p>Our editorial team has 15+ years combined experience in fleet technology, GPS tracking, and telematics. We've worked with hundreds of transport businesses.</p>
+            </div>
           </div>
 
-          <!-- 10. Weight Converter -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">⚖️ <span data-translate="conv_weight">Weight</span></h3>
-            <input type="number" id="conv-weight-val" placeholder="Value" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <select id="conv-weight-from" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
-              <option value="kg">Kilograms</option>
-              <option value="lb">Pounds</option>
-              <option value="ton">Tons</option>
-              <option value="oz">Ounces</option>
-            </select>
-            <select id="conv-weight-to" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
-              <option value="lb">Pounds</option>
-              <option value="kg">Kilograms</option>
-              <option value="ton">Tons</option>
-              <option value="oz">Ounces</option>
-            </select>
-            <div id="conv-weight-result" class="result" style="font-size: 0.85rem;"></div>
+          <div class="feature-item">
+            <div class="feature-item-icon">📊</div>
+            <div>
+              <h3>Real Data & Analysis</h3>
+              <p>All cost estimates and industry statistics are based on real-world data from fleet operators and official industry sources. No guesswork.</p>
+            </div>
           </div>
 
-          <!-- 11. Volume Converter -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🛢️ <span data-translate="conv_volume">Volume</span></h3>
-            <input type="number" id="conv-vol-val" placeholder="Value" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <select id="conv-vol-from" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
-              <option value="L">Liters</option>
-              <option value="gal">Gallons (US)</option>
-              <option value="ml">Milliliters</option>
-              <option value="m3">Cubic Meters</option>
-            </select>
-            <select id="conv-vol-to" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
-              <option value="gal">Gallons (US)</option>
-              <option value="L">Liters</option>
-              <option value="ml">Milliliters</option>
-              <option value="m3">Cubic Meters</option>
-            </select>
-            <div id="conv-vol-result" class="result" style="font-size: 0.85rem;"></div>
+          <div class="feature-item">
+            <div class="feature-item-icon">🔒</div>
+            <div>
+              <h3>Privacy First</h3>
+              <p>All calculations happen locally in your browser. We don't collect, store, or share your business data. Your information stays private.</p>
+            </div>
           </div>
 
-          <!-- 12. Currency Converter -->
-          <div class="calc-card" style="padding: 18px;">
-            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">💱 <span data-translate="conv_currency">Currency</span></h3>
-            <input type="number" id="conv-curr-val" placeholder="Amount" min="0" style="padding: 7px; margin-bottom: 7px; font-size: 0.9rem;">
-            <select id="conv-curr-from" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-              <option value="GBP">GBP</option>
-              <option value="INR">INR</option>
-              <option value="JPY">JPY</option>
-              <option value="CNY">CNY</option>
-            </select>
-            <select id="conv-curr-to" style="width: 100%; padding: 7px; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #ddd; border-radius: 4px;">
-              <option value="EUR">EUR</option>
-              <option value="USD">USD</option>
-              <option value="GBP">GBP</option>
-              <option value="INR">INR</option>
-              <option value="JPY">JPY</option>
-              <option value="CNY">CNY</option>
-            </select>
-            <div id="conv-curr-result" class="result" style="font-size: 0.85rem;"></div>
+          <div class="feature-item">
+            <div class="feature-item-icon">🌍</div>
+            <div>
+              <h3>Global Reach</h3>
+              <p>Used by fleet operators in 45+ countries. Available in 10 languages with region-specific data and currency support.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-item-icon">✓</div>
+            <div>
+              <h3>Editorial Independence</h3>
+              <p>Our reviews and recommendations are unbiased. We don't accept payment for positive reviews or rankings.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-item-icon">🆓</div>
+            <div>
+              <h3>Always Free</h3>
+              <p>All tools and content will remain free forever. No hidden fees, no premium tiers, no paywalls. Just helpful resources for transport businesses.</p>
+            </div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section" style="padding: 40px 0; background: #f8f9fa;">
+    <!-- 7. NEWSLETTER/CTA -->
+    <section class="newsletter-section">
       <div class="container">
-        <h2 style="font-size: 1.8rem; margin-bottom: 30px; text-align: center;" data-translate="section_features">Why Choose FleetGuide</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
-          <div style="text-align: center; padding: 25px;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🌍</div>
-            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-translate="feat_global">Global Support</h3>
-            <p style="color: #666;" data-translate="feat_global_desc">Multi-language support for users worldwide</p>
-          </div>
-          <div style="text-align: center; padding: 25px;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🎓</div>
-            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-translate="feat_edu">Educational</h3>
-            <p style="color: #666;" data-translate="feat_edu_desc">25+ articles on fleet management topics</p>
-          </div>
-          <div style="text-align: center; padding: 25px;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">⚡</div>
-            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-translate="feat_fast">Instant Results</h3>
-            <p style="color: #666;" data-translate="feat_fast_desc">Real-time calculations as you type</p>
-          </div>
-          <div style="text-align: center; padding: 25px;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🔒</div>
-            <h3 style="font-size: 1.2rem; margin-bottom: 10px;" data-translate="feat_privacy">Privacy First</h3>
-            <p style="color: #666;" data-translate="feat_privacy_desc">All calculations done locally in your browser</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Learning Resources with Featured Telematics -->
-    <section class="section" style="padding: 40px 0; background: white;">
-      <div class="container">
-        <h2 style="font-size: 1.8rem; margin-bottom: 20px; text-align: center;" data-translate="section_learning">Learning Resources</h2>
-        
-        <!-- Featured: Telematics Platforms -->
-        <a href="telematics-platforms.html" class="featured-box">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-            <div style="flex: 1;">
-              <h3>🔥 Popular: Best Telematics Platforms Comparison 2026</h3>
-              <p>Compare 12 leading GPS tracking systems with pricing, features, and reviews. Find the perfect telematics solution for your fleet.</p>
-            </div>
-            <div style="background: rgba(255,255,255,0.2); padding: 12px 20px; border-radius: 6px; font-weight: 700;">
-              Read Now →
-            </div>
-          </div>
-        </a>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 20px;">
-          <a href="articles/what-is-fleet-management.html" style="display: block; padding: 15px; background: #f8f9fa; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">What is Fleet Management</a>
-          <a href="articles/best-gps-tracking-devices-india-2026.html" style="display: block; padding: 15px; background: #f8f9fa; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">Best GPS Tracking Devices 2026</a>
-          <a href="articles/how-to-calculate-fuel-cost.html" style="display: block; padding: 15px; background: #f8f9fa; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">How to Calculate Fuel Cost</a>
-          <a href="articles/how-to-reduce-fuel-costs.html" style="display: block; padding: 15px; background: #f8f9fa; border-left: 4px solid #FF6B35; text-decoration: none; color: #004E89; font-weight: 500;">Reduce Fuel Costs</a>
-        </div>
-        <div style="text-align: center;">
-          <a href="articles.html" class="btn" data-translate="btn_all_articles">View All Articles</a>
-        </div>
+        <h2>Get Fleet Management Insights</h2>
+        <p>Join 500+ fleet operators receiving monthly tips on reducing costs and improving efficiency</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Get Updates</button>
+        </form>
+        <p style="font-size: 0.85rem; margin-top: 15px; opacity: 0.9;">No spam. Unsubscribe anytime. See our <a href="privacy.html" style="color: white; text-decoration: underline;">Privacy Policy</a>.</p>
       </div>
     </section>
 
   </main>
 
-  <footer style="margin-top: 50px;">
+  <!-- 8. ENHANCED FOOTER -->
+  <footer class="footer-enhanced">
     <div class="container">
-      <div class="footer-links">
-        <a href="telematics-platforms.html" style="color: #FF6B35; font-weight: 600;">Telematics Platforms</a>
-        <a href="calculators.html" data-translate="footer_calc">All Calculators</a>
-        <a href="articles.html" data-translate="footer_articles">Learning Articles</a>
-        <a href="about.html" data-translate="footer_about">About</a>
-        <a href="privacy.html" data-translate="footer_privacy">Privacy Policy</a>
-        <a href="terms.html" data-translate="footer_terms">Terms of Service</a>
-        <a href="contact.html" data-translate="footer_contact">Contact</a>
+      <div class="footer-grid">
+        
+        <div class="footer-about">
+          <h3>About FleetGuide</h3>
+          <p>Professional fleet management tools and expert guides for transport businesses worldwide. We help fleet operators reduce costs, optimize operations, and improve efficiency through data-driven insights and practical calculators.</p>
+          <p style="margin-top: 15px;"><strong>Built by Fleet & GPS Experts</strong></p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="calculators.html">All Calculators</a></li>
+            <li><a href="index.html#calculators">Fuel Cost Calculator</a></li>
+            <li><a href="index.html#calculators">Trip Cost Calculator</a></li>
+            <li><a href="index.html#calculators">Route Optimizer</a></li>
+            <li><a href="telematics-platforms.html">Telematics Comparison</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="articles.html">All Articles</a></li>
+            <li><a href="articles/how-to-reduce-fuel-costs.html">Reduce Fuel Costs</a></li>
+            <li><a href="articles/what-is-fleet-management.html">Fleet Management Guide</a></li>
+            <li><a href="articles/understanding-gps-tracking.html">GPS Tracking Basics</a></li>
+            <li><a href="articles.html#trending">Industry Trends</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
       </div>
-      <div class="footer-text" data-translate="footer_disclaimer">
-        Educational calculators for fleet management. Verify with qualified consultants for business-critical decisions.
-      </div>
-      <div class="footer-text">
-        Email: <a href="mailto:fleetguideprivacy@gmail.com" style="color: #004E89;">fleetguideprivacy@gmail.com</a>
-      </div>
-      <div class="copyright">
-        © 2026 FleetGuide
+
+      <div class="footer-bottom">
+        <p>© 2026 FleetGuide | Fleet Management Tools, GPS Tracking Guides, Telematics Comparison, Transport Business Resources</p>
+        <p style="margin-top: 10px;">Email: <a href="mailto:fleetguideprivacy@gmail.com" style="color: #FF6B35;">fleetguideprivacy@gmail.com</a></p>
       </div>
     </div>
   </footer>
@@ -473,18 +927,23 @@
   <script src="js/translations.js"></script>
   
   <script>
-    // Cookie Consent Banner Logic
+    // Cookie Consent
     function acceptCookies() {
       localStorage.setItem('cookieConsent', 'accepted');
       document.getElementById('cookieBanner').classList.remove('show');
     }
-
-    // Check if user has already accepted cookies
+    
     window.addEventListener('DOMContentLoaded', function() {
       const cookieConsent = localStorage.getItem('cookieConsent');
       if (!cookieConsent) {
         document.getElementById('cookieBanner').classList.add('show');
       }
+    });
+
+    // Smooth Scroll for CTA
+    document.querySelector('.cta-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('#calculators').scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 </body>

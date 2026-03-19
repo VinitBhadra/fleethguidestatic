@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EV vs Diesel Trucks: Total Cost Comparison 2026 | FleetGuide</title>
+  <meta name="description" content="Complete TCO comparison between electric and diesel trucks in 2026. Includes purchase costs, operating expenses, break-even analysis with charts and real-world data.">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">FleetGuide</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../telematics-platforms.html">Telematics Platforms</a></li>
+          <li><a href="../articles.html">Learning Articles</a></li>
+          <li><a href="../calculators.html">All Calculators</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="article-content">
+      <div class="container" style="max-width: 900px;">
+        
+        <div class="breadcrumb" style="margin: 20px 0; color: #666;">
+          <a href="../index.html">Home</a> » <a href="../articles.html">Articles</a> » EV vs Diesel Trucks Cost Comparison
+        </div>
+
+        <h1>EV vs Diesel Trucks: Total Cost Comparison 2026</h1>
+        
+        <div style="color: #666; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+          <strong>Published:</strong> March 2026 | <strong>Reading Time:</strong> 8 minutes | <strong>Category:</strong> Technology Comparison
+        </div>
+
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #333;">Electric trucks are reaching a critical inflection point in 2026. While purchase prices remain higher than diesel equivalents, rapidly declining battery costs and lower operating expenses are making electric vehicles economically viable for specific fleet applications. This comprehensive analysis examines the true total cost of ownership for both technologies.</p>
+
+        <h2>Purchase Price Reality Check</h2>
+
+        <p>The upfront cost gap between electric and diesel trucks remains the most significant barrier to EV adoption. A comparable Class 8 electric truck costs approximately $180,000-220,000 compared to $120,000-140,000 for a diesel equivalent. This $60,000-80,000 premium represents 50-60% higher initial investment, requiring careful analysis of long-term savings to justify.</p>
+
+        <p>However, purchase price tells only part of the story. Government incentives in many markets reduce the effective price gap substantially. In the United States, federal tax credits of up to $40,000 for commercial EVs, combined with state-level incentives, can reduce the premium to $20,000-40,000. European markets offer similar support, with Germany providing up to €40,000 in subsidies for electric commercial vehicles.</p>
+
+        <div style="margin: 30px 0; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <h3 style="text-align: center; margin-bottom: 20px;">5-Year Total Cost of Ownership Comparison</h3>
+          <canvas id="tcoChart" style="max-height: 400px;"></canvas>
+          <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 15px;">Assumes 100,000 km/year usage, typical maintenance schedules, current energy prices</p>
+        </div>
+
+        <h2>Operating Cost Breakdown</h2>
+
+        <p>Electric trucks deliver substantial operating cost advantages that accumulate over time. Energy costs represent the most significant savings category. At current US electricity rates averaging $0.13/kWh and diesel at $4.10/gallon, electric trucks cost approximately $0.28 per kilometer to operate versus $0.45 per kilometer for diesel – a 38% reduction in fuel costs alone.</p>
+
+        <h3>Energy Costs Analysis</h3>
+
+        <p>A Class 8 electric truck typically consumes 1.8-2.2 kWh per kilometer, translating to $0.23-0.29 per kilometer at average commercial electricity rates. Diesel trucks achieving 2.5 km/liter at $4.10/gallon cost $0.62 per liter, or $0.42-0.48 per kilometer. For a fleet vehicle traveling 100,000 kilometers annually, this represents $14,000-19,000 in annual fuel savings per vehicle.</p>
+
+        <h3>Maintenance Cost Realities</h3>
+
+        <p>Electric drivetrains contain approximately 20 moving parts compared to 2,000+ in diesel engines, fundamentally reducing maintenance requirements. Electric trucks eliminate oil changes, transmission services, diesel particulate filter cleaning, turbocharger maintenance, and many other routine diesel maintenance items. Industry data from early EV fleet deployments shows maintenance costs of $0.06-0.08 per kilometer for electric versus $0.12-0.15 per kilometer for diesel.</p>
+
+        <p>However, battery degradation represents a unique cost consideration for EVs. Batteries typically retain 80-85% capacity after 8-10 years of commercial use. While battery replacement costs have declined dramatically to approximately $120-150 per kWh in 2026, replacing a 500 kWh battery pack still costs $60,000-75,000 – a major expense that diesel trucks don't face.</p>
+
+        <div style="margin: 30px 0; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <h3 style="text-align: center; margin-bottom: 20px;">Monthly Operating Cost Comparison</h3>
+          <canvas id="monthlyChart" style="max-height: 400px;"></canvas>
+          <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 15px;">Based on 8,333 km/month average usage</p>
+        </div>
+
+        <h2>Break-Even Analysis</h2>
+
+        <p>The break-even point where total EV costs equal total diesel costs depends critically on annual mileage. Higher utilization favors electric trucks due to their lower operating costs per kilometer.</p>
+
+        <div style="margin: 30px 0; padding: 25px; background: #fff3e0; border-left: 4px solid #FF6B35; border-radius: 4px;">
+          <h3 style="margin-top: 0;">Break-Even Scenarios by Annual Mileage</h3>
+          <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f8f9fa;">
+              <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Annual KM</th>
+              <th style="padding: 12px; text-align: right; border-bottom: 2px solid #ddd;">Break-Even</th>
+              <th style="padding: 12px; text-align: right; border-bottom: 2px solid #ddd;">5-Year Savings</th>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">50,000 km/year</td>
+              <td style="padding: 12px; text-align: right; border-bottom: 1px solid #eee;">Never</td>
+              <td style="padding: 12px; text-align: right; border-bottom: 1px solid #eee; color: #c62828;">-$35,000</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">100,000 km/year</td>
+              <td style="padding: 12px; text-align: right; border-bottom: 1px solid #eee;">4.2 years</td>
+              <td style="padding: 12px; text-align: right; border-bottom: 1px solid #eee; color: #2e7d32;">+$8,000</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">150,000 km/year</td>
+              <td style="padding: 12px; text-align: right; border-bottom: 1px solid #eee;">2.8 years</td>
+              <td style="padding: 12px; text-align: right; border-bottom: 1px solid #eee; color: #2e7d32;">+$51,000</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #eee;">200,000 km/year</td>
+              <td style="padding: 12px; text-align: right; border-bottom: 1px solid #eee;">2.1 years</td>
+              <td style="padding: 12px; text-align: right; border-bottom: 1px solid #eee; color: #2e7d32;">+$94,000</td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="margin: 30px 0; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <h3 style="text-align: center; margin-bottom: 20px;">Cumulative Cost Over Time (100,000 km/year)</h3>
+          <canvas id="breakevenChart" style="max-height: 400px;"></canvas>
+          <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 15px;">Shows when total EV costs fall below total diesel costs</p>
+        </div>
+
+        <h2>Application-Specific Considerations</h2>
+
+        <h3>Ideal EV Applications</h3>
+
+        <p>Electric trucks excel in predictable, high-utilization scenarios with established charging infrastructure. Urban delivery routes with consistent daily mileage of 150-300 km represent the sweet spot for current EV technology. Vehicles return to depot for overnight charging, maximizing battery utilization while minimizing range anxiety.</p>
+
+        <p>Regional distribution with 300-500 km daily routes becomes viable with fast-charging capabilities. Mid-route fast charging during loading/unloading operations extends effective range without sacrificing productivity. Port drayage operations, shuttling containers between ports and nearby distribution centers, represent another ideal application with high daily mileage and predictable routes.</p>
+
+        <h3>Applications Where Diesel Still Wins</h3>
+
+        <p>Long-haul trucking beyond 500 km per day remains diesel territory in 2026. Current EV range limitations of 400-500 km fully loaded, combined with limited fast-charging infrastructure on long-haul routes, make diesel the practical choice. Cold weather operations in extreme climates significantly reduce EV range and efficiency, favoring diesel in these environments.</p>
+
+        <p>Remote area operations without reliable charging infrastructure cannot feasibly deploy EVs. Applications requiring maximum payload capacity may struggle with the 2,000-3,000 kg weight penalty of current battery systems, reducing cargo capacity.</p>
+
+        <h2>Hidden Costs and Benefits</h2>
+
+        <h3>EV Advantages Beyond Fuel Savings</h3>
+
+        <p>Electric trucks provide several operational benefits beyond direct cost savings. Zero local emissions enable access to low-emission zones in European and Asian cities, avoiding increasingly common diesel restrictions. Reduced noise pollution allows night deliveries in residential areas prohibited for diesel vehicles. Driver satisfaction typically increases with EVs due to smoother operation, reduced vibration, and quieter cabins – potentially reducing driver turnover costs.</p>
+
+        <h3>Infrastructure Investment Requirements</h3>
+
+        <p>Deploying EV fleets requires substantial charging infrastructure investment. A basic depot charging setup for 10 vehicles costs $150,000-300,000 including electrical service upgrades, charging equipment, and installation. Large fleets may require utility service upgrades costing $500,000+ to provide adequate electrical capacity. These infrastructure costs must be amortized across the fleet to accurately compare TCO.</p>
+
+        <h2>Residual Value Considerations</h2>
+
+        <p>Used EV truck values remain uncertain in 2026 due to limited market history. Battery degradation significantly impacts resale value – a truck with 75% remaining battery capacity may sell for 40-50% of original price after 5 years. Diesel trucks typically retain 35-45% of value after similar timeframes, but with more predictable depreciation curves.</p>
+
+        <p>However, diesel values face downward pressure from tightening emissions regulations and potential future diesel bans in urban areas. Electric truck values may benefit from extended useful lives, as electric drivetrains can potentially last 1 million+ kilometers versus 800,000-900,000 for diesel.</p>
+
+        <h2>2026 Market Outlook</h2>
+
+        <p>Electric truck economics continue improving rapidly. Battery costs have declined 89% since 2010 and continue dropping 8-10% annually. By 2028-2030, analysts project purchase price parity for electric and diesel trucks in several vehicle classes. Expanding charging infrastructure, particularly DC fast charging networks along major freight corridors, is eliminating range limitations for regional operations.</p>
+
+        <p>Government policies increasingly favor EVs through purchase incentives, low-emission zone regulations, and diesel restrictions. Several major economies have announced plans to phase out new diesel truck sales by 2035-2040, creating long-term regulatory risk for diesel investments.</p>
+
+        <h2>Decision Framework for Fleet Operators</h2>
+
+        <p>Fleet operators should evaluate EV viability based on these key factors:</p>
+
+        <p><strong>Choose Electric If:</strong> Daily routes under 400 km, depot-based operations with charging capability, high annual mileage (100,000+ km), urban delivery focus, access to government incentives, sustainability goals align with operational needs.</p>
+
+        <p><strong>Stay with Diesel If:</strong> Long-haul routes over 500 km, remote area operations, extreme cold climates, maximum payload requirements, uncertain route patterns, limited capital for infrastructure investment.</p>
+
+        <p><strong>Consider Hybrid Approach:</strong> Deploy EVs for ideal routes while maintaining diesel for challenging applications. This mixed fleet strategy manages risk while capturing EV benefits where economics are strongest.</p>
+
+        <h2>Conclusion</h2>
+
+        <p>The EV versus diesel decision in 2026 is no longer binary. Electric trucks have reached economic viability for specific applications, particularly high-mileage urban and regional delivery. Fleet operators should evaluate opportunities route-by-route rather than making blanket fleet-wide decisions.</p>
+
+        <p>For the right applications, EVs now deliver superior total cost of ownership while providing operational and environmental benefits. As battery technology continues improving and charging infrastructure expands, the range of viable EV applications will broaden significantly through the remainder of this decade.</p>
+
+        <div style="margin: 40px 0; padding: 25px; background: #e3f2fd; border-left: 4px solid #004E89; border-radius: 4px;">
+          <h3 style="margin-top: 0;">Calculate Your EV Economics</h3>
+          <p style="margin-bottom: 15px;">Use our fleet calculators to analyze EV versus diesel costs for your specific operation. Calculate fuel costs, depreciation, and total cost of ownership based on your actual usage patterns.</p>
+          <a href="../index.html#calculators" style="display: inline-block; padding: 12px 25px; background: #FF6B35; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">Try Calculators Now →</a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer style="margin-top: 50px;">
+    <div class="container">
+      <div class="footer-links">
+        <a href="../telematics-platforms.html">Telematics Platforms</a>
+        <a href="../calculators.html">All Calculators</a>
+        <a href="../articles.html">Learning Articles</a>
+        <a href="../about.html">About</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+      <div class="footer-text">
+        Educational content for fleet management. Verify with qualified consultants for business-critical decisions.
+      </div>
+      <div class="footer-text">
+        Email: <a href="mailto:fleetguideprivacy@gmail.com">fleetguideprivacy@gmail.com</a>
+      </div>
+      <div class="copyright">
+        © 2026 FleetGuide
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Chart 1: 5-Year TCO Comparison
+    const ctx1 = document.getElementById('tcoChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+        datasets: [
+          {
+            label: 'Diesel Total Cost ($000s)',
+            data: [145, 169, 193, 217, 241],
+            backgroundColor: '#004E89'
+          },
+          {
+            label: 'EV Total Cost ($000s)',
+            data: [195, 207, 219, 231, 243],
+            backgroundColor: '#2e7d32'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true, position: 'top' }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 260,
+            title: { display: true, text: 'Cumulative Cost ($000s)' }
+          }
+        }
+      }
+    });
+
+    // Chart 2: Monthly Operating Costs
+    const ctx2 = document.getElementById('monthlyChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Energy', 'Maintenance', 'Insurance', 'Other'],
+        datasets: [
+          {
+            label: 'Diesel ($/month)',
+            data: [3500, 1000, 600, 400],
+            backgroundColor: '#004E89'
+          },
+          {
+            label: 'EV ($/month)',
+            data: [2100, 500, 550, 350],
+            backgroundColor: '#2e7d32'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true, position: 'top' }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Monthly Cost ($)' }
+          }
+        }
+      }
+    });
+
+    // Chart 3: Break-Even Timeline
+    const ctx3 = document.getElementById('breakevenChart').getContext('2d');
+    new Chart(ctx3, {
+      type: 'line',
+      data: {
+        labels: ['Purchase', 'Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+        datasets: [
+          {
+            label: 'Diesel Cumulative Cost',
+            data: [125, 145, 169, 193, 217, 241],
+            borderColor: '#004E89',
+            backgroundColor: 'rgba(0, 78, 137, 0.1)',
+            tension: 0.4,
+            fill: true
+          },
+          {
+            label: 'EV Cumulative Cost',
+            data: [185, 195, 207, 219, 231, 243],
+            borderColor: '#2e7d32',
+            backgroundColor: 'rgba(46, 125, 50, 0.1)',
+            tension: 0.4,
+            fill: true
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true, position: 'top' }
+        },
+        scales: {
+          y: {
+            beginAtZero: false,
+            min: 100,
+            max: 260,
+            title: { display: true, text: 'Total Cost ($000s)' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -84,7 +84,7 @@ header nav {
 
 .hero p {
   font-size: 1.2rem;
-  color: #fffff;
+  color: #666;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -260,7 +260,7 @@ textarea:focus {
 .breadcrumb {
   margin-bottom: 20px;
   font-size: 0.9rem;
-  color: #fffff;
+  color: #666;
 }
 
 .breadcrumb a {
